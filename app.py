@@ -105,22 +105,19 @@ def main():
         
         st.markdown(report_fase1)
         
-        # Se il Fondo di Emergenza non è completo, STOP
+        # Se il Fondo di Emergenza non è completo, mostra warning ma continua
         if not fe_completo:
             if lang == "it":
-                st.error("⚠️ Completa il Fondo di Emergenza prima di procedere!")
+                st.warning("⚠️ **Priorità**: Il tuo Fondo di Emergenza è incompleto. Completalo prima di investire!")
+                st.info("ℹ️ Ti mostriamo comunque le Fasi 2 e 3 per aiutarti con la pianificazione completa.")
             elif lang == "en":
-                st.error("⚠️ Complete the Emergency Fund before proceeding!")
+                st.warning("⚠️ **Priority**: Your Emergency Fund is incomplete. Complete it before investing!")
+                st.info("ℹ️ We still show you Phases 2 and 3 to help you with complete planning.")
             else:
-                st.error("⚠️ Vervollständigen Sie den Notgroschen vor dem Fortfahren!")
-            
-            st.markdown(genera_disclaimer(lang))
-            
-            # Mostra risorse educative
-            render_educational_resources(lang)
-            return
+                st.warning("⚠️ **Priorität**: Ihr Notgroschen ist unvollständig. Vervollständigen Sie ihn vor dem Investieren!")
+                st.info("ℹ️ Wir zeigen Ihnen dennoch die Phasen 2 und 3, um Ihnen bei der vollständigen Planung zu helfen.")
         
-        # Capitale eccedente
+        # Capitale eccedente (sarà 0 se fondo emergenza incompleto)
         capitale_eccedente = max(0, differenza)
         
         # ====================================================================
