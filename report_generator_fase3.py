@@ -146,26 +146,22 @@ L'oro protegge dall'inflazione e riduce il rischio di portafoglio.
 
 ---
 
-### 💰 Aspetti Fiscali e Broker
+### 💰 Aspetti Fiscali
 
 **Tassazione (Italia):**
 - Aliquota standard: 26% su capital gains e dividendi
-- **Suggerimento**: Scegli broker con "Regime Amministrato" (sostituto d'imposta)
-  - Il broker calcola e trattiene automaticamente le tasse
-  - Non serve commercialista per dichiarazione
-  - Risparmio €200-500/anno
+- Verifica con il tuo commercialista le opzioni fiscali disponibili
+- Alcuni broker offrono servizi di dichiarazione automatica
 
 **Scelta del Broker:**
 
-Quando scegli un broker, considera:
-- Regime fiscale (amministrato vs dichiarativo)
-- Costi di transazione (€1-3 per ordine è ragionevole)
-- Disponibilità PAC automatici gratuiti
-- Custodia titoli (preferisci €0/anno)
-- Interfaccia user-friendly
-- Servizio clienti in italiano
+Quando scegli una piattaforma di investimento, valuta:
+- Costi di transazione e custodia
+- Disponibilità degli strumenti che ti interessano (ETF, obbligazioni, ecc.)
+- Facilità d'uso dell'interfaccia
+- Servizio clienti nella tua lingua
 
-**💡 Non ti consigliamo broker specifici**, ma cerca recensioni indipendenti e confronta almeno 3-4 opzioni prima di scegliere.
+**💡 Consiglio**: Confronta diverse opzioni, leggi recensioni indipendenti e scegli in base alle tue esigenze specifiche. Non esiste "il broker migliore" in assoluto, ma quello più adatto a te.
 
 ---
 
@@ -438,24 +434,22 @@ Gold protects against inflation and reduces portfolio risk.
 
 ---
 
-### 💰 Tax Aspects and Brokers
+### 💰 Tax Aspects
 
 **Taxation (varies by country):**
 - Check your local capital gains tax rate
-- Consider tax-advantaged accounts if available
-- **Suggestion**: Choose brokers with automatic tax reporting
+- Consult with a tax advisor for available options
+- Some brokers offer automatic tax reporting services
 
 **Choosing a Broker:**
 
-When choosing a broker, consider:
-- Tax treatment (automatic vs manual reporting)
-- Transaction costs (€1-3 per order is reasonable)
-- Availability of free automatic PACs
-- Custody fees (prefer €0/year)
-- User-friendly interface
+When choosing an investment platform, evaluate:
+- Transaction and custody costs
+- Availability of instruments you're interested in (ETFs, bonds, etc.)
+- User interface ease of use
 - Customer service in your language
 
-**💡 We don't recommend specific brokers**, but seek independent reviews and compare at least 3-4 options before choosing.
+**💡 Tip**: Compare different options, read independent reviews, and choose based on your specific needs. There's no "best broker" in absolute terms, but the one most suitable for you.
 
 ---
 
@@ -728,24 +722,22 @@ Gold schützt vor Inflation und reduziert das Portfolio-Risiko.
 
 ---
 
-### 💰 Steuerliche Aspekte und Broker
+### 💰 Steuerliche Aspekte
 
 **Besteuerung (variiert je nach Land):**
 - Prüfen Sie Ihren lokalen Kapitalertragsteuersatz
-- Erwägen Sie steuerbegünstigte Konten, falls verfügbar
-- **Empfehlung**: Wählen Sie Broker mit automatischer Steuermeldung
+- Konsultieren Sie einen Steuerberater für verfügbare Optionen
+- Einige Broker bieten automatische Steuermeldedienste
 
 **Auswahl eines Brokers:**
 
-Bei der Auswahl eines Brokers berücksichtigen Sie:
-- Steuerliche Behandlung (automatisch vs. manuelle Meldung)
-- Transaktionskosten (€1-3 pro Order ist angemessen)
-- Verfügbarkeit kostenloser automatischer PACs
-- Depotgebühren (bevorzugen Sie €0/Jahr)
-- Benutzerfreundliche Oberfläche
+Bei der Auswahl einer Investitionsplattform bewerten Sie:
+- Transaktions- und Depotkosten
+- Verfügbarkeit der Instrumente, die Sie interessieren (ETFs, Anleihen, etc.)
+- Benutzerfreundlichkeit der Oberfläche
 - Kundenservice in Ihrer Sprache
 
-**💡 Wir empfehlen keine spezifischen Broker**, aber suchen Sie nach unabhängigen Bewertungen und vergleichen Sie mindestens 3-4 Optionen vor der Wahl.
+**💡 Tipp**: Vergleichen Sie verschiedene Optionen, lesen Sie unabhängige Bewertungen und wählen Sie basierend auf Ihren spezifischen Bedürfnissen. Es gibt keinen "besten Broker" im absoluten Sinne, sondern den für Sie am besten geeigneten.
 
 ---
 
