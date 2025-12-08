@@ -88,9 +88,9 @@ Prima di procedere con qualsiasi altro obiettivo finanziario, devi completare il
 1. **Destina il 100% del tuo risparmio mensile** ({formatta_valuta(risparmio_mensile)}) al Fondo di Emergenza per i prossimi **{mesi_rientro} mesi**
 2. **Mantieni questa liquidità** in un conto facilmente accessibile (conto deposito o conto corrente)
 3. **Non investire** questi soldi in azioni o strumenti rischiosi
-4. **Dopo {mesi_rientro} mesi**, potrai procedere alle fasi successive
+4. **Dopo {mesi_rientro} mesi**, avrai completato la base di sicurezza e potrai considerare gli investimenti
 
-**⛔ STOP: Non passare alle fasi successive finché non hai completato il tuo Fondo di Emergenza!**
+**⚠️ PRIORITÀ ASSOLUTA**: Completa il Fondo di Emergenza prima di investire! Le fasi 2 e 3 sono mostrate sotto per aiutarti con la pianificazione completa.
 """
         else:
             report += """
@@ -101,7 +101,7 @@ Prima di procedere con qualsiasi altro obiettivo finanziario, devi completare il
 2. **Riduci drasticamente le spese** per creare un margine di risparmio
 3. **Rivedi il tuo budget** per trovare almeno 100-200€ al mese da destinare al fondo
 
-**Non potrai procedere alle fasi successive senza un piano di rientro fattibile!**
+**⚠️ IMPORTANTE**: Questo è un prerequisito fondamentale prima di considerare qualsiasi investimento. Le fasi 2 e 3 sono mostrate sotto per la pianificazione completa.
 """
         
         report += """
@@ -172,9 +172,9 @@ Before proceeding with any other financial goal, you must complete your Emergenc
 1. **Allocate 100% of your monthly savings** ({formatta_valuta(risparmio_mensile)}) to the Emergency Fund for the next **{mesi_rientro} months**
 2. **Keep this liquidity** in an easily accessible account (savings account or checking account)
 3. **Do not invest** this money in stocks or risky instruments
-4. **After {mesi_rientro} months**, you can proceed to subsequent phases
+4. **After {mesi_rientro} months**, you will have completed your safety foundation and can consider investments
 
-**⛔ STOP: Do not move to subsequent phases until you have completed your Emergency Fund!**
+**⚠️ ABSOLUTE PRIORITY**: Complete your Emergency Fund before investing! Phases 2 and 3 are shown below to help you with complete planning.
 """
         else:
             report += """
@@ -185,7 +185,7 @@ Before proceeding with any other financial goal, you must complete your Emergenc
 2. **Drastically reduce expenses** to create a savings margin
 3. **Review your budget** to find at least €100-200 per month to allocate to the fund
 
-**You cannot proceed to subsequent phases without a feasible recovery plan!**
+**⚠️ IMPORTANT**: This is a fundamental prerequisite before considering any investments. Phases 2 and 3 are shown below for complete planning.
 """
         
         report += """
@@ -256,9 +256,9 @@ Bevor Sie mit anderen finanziellen Zielen fortfahren, müssen Sie Ihren Notgrosc
 1. **Weisen Sie 100% Ihrer monatlichen Ersparnisse** ({formatta_valuta(risparmio_mensile)}) dem Notgroschen für die nächsten **{mesi_rientro} Monate** zu
 2. **Bewahren Sie diese Liquidität** auf einem leicht zugänglichen Konto auf (Sparkonto oder Girokonto)
 3. **Investieren Sie nicht** dieses Geld in Aktien oder riskante Instrumente
-4. **Nach {mesi_rientro} Monaten** können Sie zu den nachfolgenden Phasen übergehen
+4. **Nach {mesi_rientro} Monaten** werden Sie Ihre Sicherheitsgrundlage abgeschlossen haben und können Investitionen in Betracht ziehen
 
-**⛔ STOPP: Gehen Sie nicht zu den nachfolgenden Phasen über, bis Sie Ihren Notgroschen vervollständigt haben!**
+**⚠️ ABSOLUTE PRIORITÄT**: Vervollständigen Sie Ihren Notgroschen vor dem Investieren! Die Phasen 2 und 3 werden unten gezeigt, um Ihnen bei der vollständigen Planung zu helfen.
 """
         else:
             report += """
@@ -269,7 +269,7 @@ Bevor Sie mit anderen finanziellen Zielen fortfahren, müssen Sie Ihren Notgrosc
 2. **Reduzieren Sie die Ausgaben drastisch**, um eine Sparmarge zu schaffen
 3. **Überprüfen Sie Ihr Budget**, um mindestens 100-200€ pro Monat für den Notgroschen zu finden
 
-**Sie können nicht zu den nachfolgenden Phasen fortfahren ohne einen machbaren Rückkehrplan!**
+**⚠️ WICHTIG**: Dies ist eine grundlegende Voraussetzung, bevor Sie Investitionen in Betracht ziehen. Die Phasen 2 und 3 werden unten für die vollständige Planung gezeigt.
 """
         
         report += """
