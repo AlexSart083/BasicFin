@@ -205,5 +205,5 @@ Questo approccio è:
 ---
 
 *Versione: 3.0.3*  
-*Data: 8 Dicembre 2024*  
+*Data: 8 Dicembre 2025*  
 *File modificati: app.py, report_generator_fase1.py*
