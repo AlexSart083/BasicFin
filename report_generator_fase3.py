@@ -276,18 +276,48 @@ Costruisci e monitora il tuo portafoglio di investimenti. Simula diverse allocaz
 - "L'investitore intelligente" - Benjamin Graham
 - "Un passo avanti a Wall Street" - Burton Malkiel  
 - "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
 - "Educazione finanziaria" - Banca d'Italia (gratuito online)
 
 **In Inglese:**
 - "The Intelligent Investor" - Benjamin Graham
 - "A Random Walk Down Wall Street" - Burton Malkiel
 - "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
 - "Your Money or Your Life" - Vicki Robin & Joe Dominguez
 
 **In Tedesco:**
 - "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
 - "Der reichste Mann von Babylon" - George S. Clason
 - "Rich Dad Poor Dad" - Robert Kiyosaki (tradotto)
+
+---
+
+#### 📺 Canali YouTube Educativi
+
+Per approfondire la tua educazione finanziaria, ecco alcuni canali YouTube consigliati:
+
+**Canali Italiani:**
+- **Paolo Coletti** - Finanza personale e investimenti passivi
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) e investimenti
+- **Pietro Michelangeli** - Educazione finanziaria e risparmio
+
+**Canali Inglesi:**
+Cerca canali di finanza personale in inglese focalizzati su:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**Canali Tedeschi:**
+Cerca canali di finanza personale in tedesco focalizzati su:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Consiglio:** Verifica sempre la qualità dei contenuti e confronta diverse fonti. I migliori canali educativi sono quelli che insegnano principi, non che vendono prodotti specifici.
 
 ---
 
@@ -564,18 +594,48 @@ Build and monitor your investment portfolio. Simulate different allocations and 
 - "L'investitore intelligente" - Benjamin Graham
 - "Un passo avanti a Wall Street" - Burton Malkiel  
 - "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
 - "Educazione finanziaria" - Banca d'Italia (free online)
 
 **In English:**
 - "The Intelligent Investor" - Benjamin Graham
 - "A Random Walk Down Wall Street" - Burton Malkiel
 - "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
 - "Your Money or Your Life" - Vicki Robin & Joe Dominguez
 
 **In German:**
 - "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
 - "Der reichste Mann von Babylon" - George S. Clason
 - "Rich Dad Poor Dad" - Robert Kiyosaki (translated)
+
+---
+
+#### 📺 Educational YouTube Channels
+
+To deepen your financial education, here are some recommended YouTube channels:
+
+**Italian Channels:**
+- **Paolo Coletti** - Personal finance and passive investing
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) and investing
+- **Pietro Michelangeli** - Financial education and saving
+
+**English Channels:**
+Look for English personal finance channels focused on:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**German Channels:**
+Look for German personal finance channels focused on:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Tip:** Always verify content quality and compare different sources. The best educational channels are those that teach principles, not sell specific products.
 
 ---
 
@@ -852,18 +912,48 @@ Bauen und überwachen Sie Ihr Anlageportfolio. Simulieren Sie verschiedene Allok
 - "L'investitore intelligente" - Benjamin Graham
 - "Un passo avanti a Wall Street" - Burton Malkiel  
 - "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
 - "Educazione finanziaria" - Banca d'Italia (kostenlos online)
 
 **Auf Englisch:**
 - "The Intelligent Investor" - Benjamin Graham
 - "A Random Walk Down Wall Street" - Burton Malkiel
 - "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
 - "Your Money or Your Life" - Vicki Robin & Joe Dominguez
 
 **Auf Deutsch:**
 - "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
 - "Der reichste Mann von Babylon" - George S. Clason
 - "Rich Dad Poor Dad" - Robert Kiyosaki (übersetzt)
+
+---
+
+#### 📺 Bildungs-YouTube-Kanäle
+
+Um Ihre Finanzbildung zu vertiefen, hier einige empfohlene YouTube-Kanäle:
+
+**Italienische Kanäle:**
+- **Paolo Coletti** - Persönliche Finanzen und passives Investieren
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) und Investitionen
+- **Pietro Michelangeli** - Finanzbildung und Sparen
+
+**Englische Kanäle:**
+Suchen Sie nach englischen Personal-Finance-Kanälen mit Fokus auf:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**Deutsche Kanäle:**
+Suchen Sie nach deutschen Finanzbildungskanälen mit Fokus auf:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Tipp:** Überprüfen Sie immer die Qualität der Inhalte und vergleichen Sie verschiedene Quellen. Die besten Bildungskanäle sind diejenigen, die Prinzipien lehren, nicht spezifische Produkte verkaufen.
 
 ---
 
