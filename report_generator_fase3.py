@@ -202,13 +202,52 @@ Quando scegli un broker, considera:
    - Le crisi sono opportunità (compri a sconto con PAC)
 
 2. **💎 COSTI BASSI = Più Rendimento**
-   - TER 0.20% vs 1.50% = €170,000 di differenza su €100K in 30 anni!
+   - TER 0.20% vs 1.50% = €245,906 di differenza su €100K in 30 anni!
+   - ⚠️ Calcolo teorico con interesse composto al 7% lordo annuo (non una previsione di mercato)
 
 3. **🧘 DISCIPLINA = PAC Continuo**
    - Investi sempre la stessa cifra mensile
    - Indipendentemente dal mercato (Dollar Cost Averaging)
 
 **Mantra:** *"Il mercato azionario ha SEMPRE recuperato nel lungo termine. Rimango investito."*
+
+---
+
+### 📊 Il Potere dell'Interesse Composto e l'Impatto dei Costi
+
+#### 🧮 Calcolo Dettagliato (Interesse Composto)
+
+**⚠️ IMPORTANTE**: I seguenti calcoli usano un rendimento ipotetico del 7% annuo lordo per illustrare l'impatto matematico dei costi. **Questo NON è una previsione di mercato reale**. I rendimenti storici non garantiscono rendimenti futuri, e i mercati possono avere performance molto diverse.
+
+**Formula dell'Interesse Composto:**
+```
+Capitale Finale = Capitale Iniziale × (1 + Rendimento Netto Annuo)^Anni
+Rendimento Netto = Rendimento Lordo - TER
+```
+
+**Esempio con €100,000 investiti per 30 anni:**
+
+**Scenario 1: ETF a Basso Costo (TER 0.20%)**
+- Rendimento lordo: 7.00% annuo
+- Costi (TER): 0.20% annuo
+- Rendimento netto: 6.80% annuo
+- Capitale finale: €100,000 × (1.068)³⁰ = **€764,645**
+
+**Scenario 2: Fondo Attivo Costoso (TER 1.50%)**
+- Rendimento lordo: 7.00% annuo
+- Costi (TER): 1.50% annuo
+- Rendimento netto: 5.50% annuo
+- Capitale finale: €100,000 × (1.055)³⁰ = **€518,739**
+
+**💰 Differenza: €245,906 persi in costi!**
+
+Questo significa che **ogni 1% di costi in più ti costa circa il 32% del tuo capitale finale** su un orizzonte di 30 anni.
+
+**📉 Impatto Percentuale dei Costi:**
+- Con TER 0.20%: Perdi il 3.5% del potenziale rendimento
+- Con TER 1.50%: Perdi il 32.1% del potenziale rendimento
+
+**Conclusione:** I costi hanno un impatto devastante sul lungo termine a causa dell'interesse composto. Anche differenze apparentemente piccole (1% vs 0.2%) si traducono in centinaia di migliaia di euro persi.
 
 ---
 
@@ -453,13 +492,52 @@ When choosing a broker, consider:
    - Crises are opportunities (buy at discount with PAC)
 
 2. **💎 LOW COSTS = More Returns**
-   - TER 0.20% vs 1.50% = €170,000 difference on €100K over 30 years!
+   - TER 0.20% vs 1.50% = €245,906 difference on €100K over 30 years!
+   - ⚠️ Theoretical calculation with 7% gross annual compound interest (not a market forecast)
 
 3. **🧘 DISCIPLINE = Continuous PAC**
    - Always invest the same monthly amount
    - Regardless of market conditions (Dollar Cost Averaging)
 
 **Mantra:** *"The stock market has ALWAYS recovered in the long term. I stay invested."*
+
+---
+
+### 📊 The Power of Compound Interest and Cost Impact
+
+#### 🧮 Detailed Calculation (Compound Interest)
+
+**⚠️ IMPORTANT**: The following calculations use a hypothetical 7% annual gross return to illustrate the mathematical impact of costs. **This is NOT a real market forecast**. Historical returns do not guarantee future returns, and markets can perform very differently.
+
+**Compound Interest Formula:**
+```
+Final Capital = Initial Capital × (1 + Net Annual Return)^Years
+Net Return = Gross Return - TER
+```
+
+**Example with €100,000 invested for 30 years:**
+
+**Scenario 1: Low-Cost ETF (TER 0.20%)**
+- Gross return: 7.00% per year
+- Costs (TER): 0.20% per year
+- Net return: 6.80% per year
+- Final capital: €100,000 × (1.068)³⁰ = **€764,645**
+
+**Scenario 2: Expensive Active Fund (TER 1.50%)**
+- Gross return: 7.00% per year
+- Costs (TER): 1.50% per year
+- Net return: 5.50% per year
+- Final capital: €100,000 × (1.055)³⁰ = **€518,739**
+
+**💰 Difference: €245,906 lost to costs!**
+
+This means that **every 1% extra in costs costs you approximately 32% of your final capital** over a 30-year horizon.
+
+**📉 Percentage Impact of Costs:**
+- With TER 0.20%: You lose 3.5% of potential returns
+- With TER 1.50%: You lose 32.1% of potential returns
+
+**Conclusion:** Costs have a devastating long-term impact due to compound interest. Even seemingly small differences (1% vs 0.2%) translate into hundreds of thousands of euros lost.
 
 ---
 
@@ -704,13 +782,52 @@ Bei der Auswahl eines Brokers berücksichtigen Sie:
    - Krisen sind Gelegenheiten (kaufen Sie mit Rabatt durch PAC)
 
 2. **💎 NIEDRIGE KOSTEN = Mehr Rendite**
-   - TER 0,20% vs. 1,50% = €170.000 Unterschied auf €100K über 30 Jahre!
+   - TER 0,20% vs. 1,50% = €245.906 Unterschied auf €100K über 30 Jahre!
+   - ⚠️ Theoretische Berechnung mit 7% Brutto-Jahreszins (keine Marktprognose)
 
 3. **🧘 DISZIPLIN = Kontinuierlicher PAC**
    - Investieren Sie immer denselben monatlichen Betrag
    - Unabhängig von Marktbedingungen (Dollar Cost Averaging)
 
 **Mantra:** *"Der Aktienmarkt hat sich langfristig IMMER erholt. Ich bleibe investiert."*
+
+---
+
+### 📊 Die Kraft des Zinseszinses und die Kostenauswirkung
+
+#### 🧮 Detaillierte Berechnung (Zinseszins)
+
+**⚠️ WICHTIG**: Die folgenden Berechnungen verwenden eine hypothetische jährliche Bruttorendite von 7%, um die mathematische Auswirkung der Kosten zu veranschaulichen. **Dies ist KEINE echte Marktprognose**. Historische Renditen garantieren keine zukünftigen Renditen, und Märkte können sehr unterschiedlich performen.
+
+**Zinseszins-Formel:**
+```
+Endkapital = Anfangskapital × (1 + Netto-Jahresrendite)^Jahre
+Nettorendite = Bruttorendite - TER
+```
+
+**Beispiel mit €100.000 investiert für 30 Jahre:**
+
+**Szenario 1: Kostengünstiger ETF (TER 0,20%)**
+- Bruttorendite: 7,00% pro Jahr
+- Kosten (TER): 0,20% pro Jahr
+- Nettorendite: 6,80% pro Jahr
+- Endkapital: €100.000 × (1,068)³⁰ = **€764.645**
+
+**Szenario 2: Teurer aktiver Fonds (TER 1,50%)**
+- Bruttorendite: 7,00% pro Jahr
+- Kosten (TER): 1,50% pro Jahr
+- Nettorendite: 5,50% pro Jahr
+- Endkapital: €100.000 × (1,055)³⁰ = **€518.739**
+
+**💰 Unterschied: €245.906 durch Kosten verloren!**
+
+Das bedeutet, dass **jedes zusätzliche 1% an Kosten Sie etwa 32% Ihres Endkapitals kostet** über einen 30-Jahres-Horizont.
+
+**📉 Prozentuale Auswirkung der Kosten:**
+- Mit TER 0,20%: Sie verlieren 3,5% der potenziellen Rendite
+- Mit TER 1,50%: Sie verlieren 32,1% der potenziellen Rendite
+
+**Fazit:** Kosten haben aufgrund des Zinseszinses eine verheerende langfristige Auswirkung. Selbst scheinbar kleine Unterschiede (1% vs. 0,2%) führen zu Hunderttausenden von Euro an Verlusten.
 
 ---
 
