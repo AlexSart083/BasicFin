@@ -1,9 +1,9 @@
 """
-Guida Finanziaria per Neofiti - Streamlit App v3.0
+Guida Finanziaria per Neofiti - Streamlit App v3.1.1
 App educativa multilingue per la pianificazione finanziaria a tre fasi
 
-Autore: Antonino Sortino
-Versione: 3.0 - Modular & Multilingual
+Versione: 3.1.1 - Modular & Multilingual
+Anno: 2025
 """
 
 import streamlit as st
@@ -50,10 +50,10 @@ def main():
         lang = render_language_selector()
         st.markdown("---")
         st.markdown(f"### {t('version_info', lang)}")
-        st.markdown("v3.0 - Multilingual")
+        st.markdown("v3.1.1 - Multilingual")
         st.markdown("🇮🇹 🇬🇧 🇩🇪")
         st.markdown("---")
-        st.markdown("**© 2024 Antonino Sortino**")
+        st.markdown("**© 2025**")
         st.markdown("Educational Tool")
     
     render_header(lang)
