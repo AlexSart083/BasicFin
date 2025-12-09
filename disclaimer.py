@@ -50,7 +50,6 @@ e **non costituisce consulenza finanziaria personalizzata**.
 - ✅ Confronta sempre costi e performance
 - ✅ Consulta un consulente indipendente per decisioni importanti
 - ✅ Valuta sempre i rischi prima di investire
-- ✅ Investi solo ciò che puoi permetterti di perdere nel breve termine
 
 ### Privacy e Dati
 
