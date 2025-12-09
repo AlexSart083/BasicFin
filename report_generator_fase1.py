@@ -1,164 +1,408 @@
 """
-Report Generator Module
-Genera report finanziari personalizzati in italiano, inglese e tedesco
+Report Generator Module - Fase 3 (Investimenti)
+Genera report dettagliati per gli investimenti a lungo termine con risorse educative
 """
 
-from calculations import formatta_valuta
+from calculations import formatta_valuta, genera_allocazione_investimenti
 
-# ============================================================================
-# FASE 1: FONDO DI EMERGENZA
-# ============================================================================
 
-def genera_report_fase1(capitale_attuale, fondo_emergenza, differenza, uscite_mensili, 
-                        risparmio_mensile, mesi_rientro, lang):
+def genera_report_fase3(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione, lang):
     """
-    Genera il report FASE 1 nella lingua specificata.
+    Genera il report FASE 3 nella lingua specificata.
     
     Args:
-        capitale_attuale (float): Capitale attuale disponibile
-        fondo_emergenza (float): Target fondo emergenza
-        differenza (float): Differenza capitale - target
-        uscite_mensili (float): Uscite mensili totali
-        risparmio_mensile (float): Risparmio mensile disponibile
-        mesi_rientro (int): Mesi necessari per completare il fondo
+        disponibilita_mensile (float): Disponibilità mensile per investimenti
+        capitale_investibile_subito (float): Capitale da investire immediatamente
+        profilo_rischio (str): Profilo di rischio selezionato
+        anni_pensione (int): Anni alla pensione
         lang (str): Codice lingua (it, en, de)
         
     Returns:
         str: Report formattato in Markdown
     """
     if lang == "it":
-        return _genera_report_fase1_it(
-            capitale_attuale, fondo_emergenza, differenza, 
-            uscite_mensili, risparmio_mensile, mesi_rientro
-        )
+        return _genera_report_fase3_it(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione)
     elif lang == "en":
-        return _genera_report_fase1_en(
-            capitale_attuale, fondo_emergenza, differenza, 
-            uscite_mensili, risparmio_mensile, mesi_rientro
-        )
+        return _genera_report_fase3_en(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione)
     elif lang == "de":
-        return _genera_report_fase1_de(
-            capitale_attuale, fondo_emergenza, differenza, 
-            uscite_mensili, risparmio_mensile, mesi_rientro
-        )
+        return _genera_report_fase3_de(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione)
     else:
-        return _genera_report_fase1_it(
-            capitale_attuale, fondo_emergenza, differenza, 
-            uscite_mensili, risparmio_mensile, mesi_rientro
-        )
+        return _genera_report_fase3_it(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione)
 
 
-def _genera_report_fase1_it(capitale_attuale, fondo_emergenza, differenza, uscite_mensili, 
-                            risparmio_mensile, mesi_rientro=None):
-    """Genera il report FASE 1 in italiano."""
+def _genera_report_fase3_it(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione):
+    """Genera il report FASE 3 in italiano con dettagli completi."""
+    
     report = f"""
-## 🛡️ FASE 1: Fondo di Emergenza
+## 📈 FASE 3: Investimenti a Lungo Termine
 
-### Priorità Assoluta!
+### Fai Crescere il Tuo Patrimonio
 
-Il **Fondo di Emergenza** è la base della tua sicurezza finanziaria. 
-Ti protegge da imprevisti come perdita del lavoro, spese mediche o riparazioni urgenti.
+Congratulazioni! Hai completato le basi: Fondo di Emergenza e Pianificazione degli Obiettivi. 
+Ora puoi investire per il futuro.
 
-**La regola**: Devi avere liquidità pari a **6 mesi di spese**.
+### Disponibilità per Investimenti
 
-### Il Tuo Fondo di Emergenza
-
-- 💰 **Capitale Attuale**: {formatta_valuta(capitale_attuale)}
-- 🎯 **Target Fondo Emergenza**: {formatta_valuta(fondo_emergenza)} (6 × {formatta_valuta(uscite_mensili)})
+**Importo Mensile Investibile**: {formatta_valuta(disponibilita_mensile)}
 """
     
-    if differenza < 0:
-        report += f"""
-- ⚠️ **Situazione**: Il tuo fondo è **INCOMPLETO**
-- 📉 **Importo Mancante**: {formatta_valuta(abs(differenza))}
-
-### 🚨 PIANO DI RIENTRO AUTOMATICO
-
-Prima di procedere con qualsiasi altro obiettivo finanziario, devi completare il tuo Fondo di Emergenza!
-
-"""
-        if mesi_rientro and mesi_rientro != float('inf'):
-            report += f"""
-**Piano di Accumulo:**
-- 💵 **Risparmio Mensile Disponibile**: {formatta_valuta(risparmio_mensile)}
-- ⏱️ **Tempo Necessario**: {mesi_rientro} mesi
-- 📅 **Importo Mensile da Destinare**: {formatta_valuta(risparmio_mensile)} (100% del risparmio)
-
-**Cosa fare:**
-1. **Destina il 100% del tuo risparmio mensile** ({formatta_valuta(risparmio_mensile)}) al Fondo di Emergenza per i prossimi **{mesi_rientro} mesi**
-2. **Mantieni questa liquidità** in un conto facilmente accessibile (conto deposito o conto corrente)
-3. **Non investire** questi soldi in azioni o strumenti rischiosi
-4. **Dopo {mesi_rientro} mesi**, avrai completato la base di sicurezza e potrai considerare gli investimenti
-
-**⚠️ PRIORITÀ ASSOLUTA**: Completa il Fondo di Emergenza prima di investire! Le fasi 2 e 3 sono mostrate sotto per aiutarti con la pianificazione completa.
-"""
-        else:
-            report += """
-⚠️ **ATTENZIONE**: Il tuo risparmio mensile è insufficiente o nullo. 
-
-**Cosa fare:**
-1. **Aumenta le tue entrate** (secondo lavoro, freelance, vendita di beni non essenziali)
-2. **Riduci drasticamente le spese** per creare un margine di risparmio
-3. **Rivedi il tuo budget** per trovare almeno 100-200€ al mese da destinare al fondo
-
-**⚠️ IMPORTANTE**: Questo è un prerequisito fondamentale prima di considerare qualsiasi investimento. Le fasi 2 e 3 sono mostrate sotto per la pianificazione completa.
-"""
-        
+    if capitale_investibile_subito > 0:
+        report += f"**Capitale da Investire Subito (lump sum)**: {formatta_valuta(capitale_investibile_subito)}\n\n"
         report += """
----
-
-### 💡 Consiglio per Neofiti
-
-Il Fondo di Emergenza non è un "extra", è un **must**. Senza di esso, qualsiasi imprevisto 
-potrebbe costringerti a indebitarti o vendere investimenti in perdita.
-
----
-
-### 📊 Considerazione sull'Inflazione
-
-**Perché il Fondo di Emergenza deve essere in liquidità?**
-
-Anche se l'**inflazione erode il potere d'acquisto** della liquidità nel tempo, il Fondo di Emergenza 
-DEVE rimanere **immediatamente disponibile** e **senza rischi**:
-
-- ✅ **Accesso immediato**: In caso di emergenza, non puoi aspettare vendite di investimenti
-- ✅ **Zero rischio di perdite**: Gli investimenti possono essere in perdita proprio quando ne hai bisogno
-- ⚠️ **Inflazione**: Sì, la liquidità perde valore (circa 2-3% all'anno), ma è il prezzo della sicurezza
-
-**💡 La soluzione all'inflazione**:
-1. **Completa il Fondo di Emergenza** (FASE 1) - Liquidità
-2. **Pianifica gli obiettivi** (FASE 2) - PAC protetti
-3. **Investi il resto** (FASE 3) - Qui batti l'inflazione!
-
-Solo DOPO aver completato il Fondo di Emergenza puoi investire per battere l'inflazione nel lungo termine.
+💡 **Strategia Consigliata**: Investi il capitale iniziale in un'unica soluzione (lump sum) seguendo 
+l'allocazione indicata sotto, e continua con investimenti mensili regolari (PAC).
 """
-    else:
-        report += f"""
-- ✅ **Situazione**: Il tuo fondo è **COMPLETO**!
-- 💪 **Eccedenza**: {formatta_valuta(differenza)}
+    
+    report += "\n"
+    
+    if disponibilita_mensile <= 0 and capitale_investibile_subito <= 0:
+        report += """
+### ⚠️ Nessuna Disponibilità
 
-**Complimenti!** Hai una solida base di sicurezza finanziaria. 
-Ora puoi procedere con le fasi successive.
+Al momento non hai disponibilità per investimenti a lungo termine. 
+Concentrati sul completare le fasi precedenti o riduci le tue spese.
 
-**💡 Filosofia: "Investire Prima"**
+---
+"""
+        return report
+    
+    # Genera allocazione
+    allocazione = genera_allocazione_investimenti(profilo_rischio, anni_pensione)
+    
+    report += f"""
+### 🎯 La Tua Allocazione di Portafoglio
 
-La tua eccedenza di capitale verrà allocata secondo questa filosofia:
-1. Prima priorità: Coprire eventuali gap negli obiettivi futuri
-2. Seconda priorità: **Investire subito** il resto per farlo crescere
+**Profilo di Rischio**: {profilo_rischio}  
+**Orizzonte Temporale**: {anni_pensione} anni alla pensione
+
+Basandoci sul tuo profilo e orizzonte temporale, ecco l'allocazione suggerita:
+
+"""
+    
+    for asset, percentuale in allocazione.items():
+        if disponibilita_mensile > 0:
+            importo_mensile = disponibilita_mensile * (percentuale / 100)
+            report += f"- **{asset}**: {percentuale}% → {formatta_valuta(importo_mensile)} al mese"
+        else:
+            report += f"- **{asset}**: {percentuale}%"
+        
+        if capitale_investibile_subito > 0:
+            importo_lump = capitale_investibile_subito * (percentuale / 100)
+            report += f" (+ {formatta_valuta(importo_lump)} lump sum)"
+        
+        report += "\n"
+    
+    report += """
 
 ---
 
-### 📊 Protezione dall'Inflazione
+### 📚 Dettagli su Asset e Strumenti
 
-Ora che hai completato il Fondo di Emergenza, puoi concentrarti su **battere l'inflazione** 
-con gli investimenti:
+#### 🌍 Azioni - Componente Azionaria Globale
 
-- ✅ Il tuo "cuscinetto di sicurezza" è al sicuro in liquidità
-- 📈 Il capitale eccedente può essere investito per **crescere oltre l'inflazione**
-- 💰 Obiettivo: rendimenti reali positivi (rendimento - inflazione > 0)
+La componente azionaria è il motore di crescita del tuo portafoglio. Per massimizzare la diversificazione:
 
-Nelle fasi successive imparerai come costruire un portafoglio che preservi e aumenti 
-il tuo potere d'acquisto nel tempo!
+**Strumenti Consigliati (ETF):**
+
+1. **MSCI World** - Paesi Sviluppati (≈1,500 azioni globali)
+2. **MSCI ACWI o FTSE All-World** - Globale Completo (≈3,000 azioni)
+
+**Criteri di Selezione ETF:**
+- TER (costi annui) <0.25%
+- Patrimonio gestito >€100M (per liquidità)
+- Replica fisica (possiede direttamente i titoli)
+- Distribuzione: Preferisci "Accumulo" (reinvestimento automatico dividendi)
+
+---
+
+#### 🏦 Obbligazioni - Componente di Stabilità
+
+Le obbligazioni riducono la volatilità del portafoglio e forniscono reddito stabile.
+
+**🚨 PRIORITÀ: Investi SOLO in obbligazioni denominate nella TUA valuta (EUR)**
+
+**Strumenti Consigliati:**
+
+1. **ETF Obbligazioni Governative Eurozona** (Investment Grade)
+2. **ETF Obbligazioni Corporate Eurozona** (Investment Grade, rating BBB- o superiore)
+
+**Criteri di Selezione:**
+- Denominazione EUR (nessun rischio cambio)
+- TER <0.20%
+- Rating minimo BBB- (Investment Grade)
+- Duration media 5-10 anni
+
+---
+
+#### 🥇 Oro - Protezione e Decorrelazione
+
+L'oro protegge dall'inflazione e riduce il rischio di portafoglio.
+
+**Strumenti Consigliati:**
+
+1. **ETC Oro Fisico** (backed da oro reale in caveau)
+   - TER <0.25%
+   - Preferisci quelli domiciliati in Svizzera/UK per sicurezza
+
+---
+
+### 💰 Aspetti Fiscali
+
+**Tassazione (Italia):**
+- Aliquota standard: 26% su capital gains e dividendi
+- Regime del risparmio gestito/amministrato disponibile con alcuni broker
+
+**Gestione Fiscale - Tre Opzioni:**
+
+**1. Fai-da-Te (Dichiarazione dei Redditi)**
+- ✅ Nessun costo aggiuntivo
+- ⚠️ Richiede tempo e competenze fiscali
+- ⚠️ Rischio di errori nella compilazione
+- 💡 **Adatto se**: hai pochi movimenti e sei disposto a studiare la normativa
+
+**2. Commercialista/Consulente Fiscale**
+- ✅ Maggiore sicurezza e precisione
+- ✅ Risparmio di tempo e stress
+- ⚠️ Costo del servizio professionale (variabile in base alla complessità)
+- 💡 **Adatto se**: hai molti movimenti, situazione complessa o preferisci delegare
+
+**3. Broker con "Regime Amministrato"**
+- ✅ Il broker calcola e trattiene le tasse automaticamente
+- ✅ Semplifica drasticamente la dichiarazione dei redditi
+- ✅ Riduce il rischio di errori
+- 💡 **Opzione consigliata** per chi inizia o ha poca esperienza fiscale
+
+**💡 Consiglio**: Valuta il tuo livello di competenza fiscale, il tempo a disposizione e la complessità del tuo portafoglio. Per iniziare, un broker con regime amministrato è spesso la scelta più saggia.
+
+---
+
+**Scelta del Broker:**
+
+Quando scegli una piattaforma di investimento, valuta:
+- Costi di transazione e custodia
+- Disponibilità degli strumenti che ti interessano (ETF, obbligazioni, ecc.)
+- Facilità d'uso dell'interfaccia
+- Servizio clienti nella tua lingua
+- **Regime fiscale offerto** (amministrato vs dichiarativo)
+
+**💡 Consiglio**: Confronta diverse opzioni, leggi recensioni indipendenti e scegli in base alle tue esigenze specifiche. Non esiste "il broker migliore" in assoluto, ma quello più adatto a te.
+
+---
+
+### 🎯 Piano di Azione
+
+**1. Educati:**
+- Studia su siti educativi indipendenti (vedi sezione risorse sotto)
+- Comprendi la differenza tra azioni, obbligazioni, ETF
+- Impara cos'è il TER e il tracking error
+
+**2. Scegli gli Strumenti:**
+- Usa screener ETF per trovare i migliori prodotti
+- Confronta almeno 3 ETF per categoria
+- Verifica domiciliazione fiscale (Irlanda/Lussemburgo sono ottimali per EU)
+
+**3. Apri un Conto:**
+- Confronta broker
+- Completa KYC (Know Your Customer)
+- Deposita capitale iniziale
+
+**4. Imposta PAC Automatico:**
+- Configura investimenti mensili automatici
+- **Frequenza**: Mensile
+- **Orario**: Se fai ordini manuali, usa orari centrali (10:00-16:00 CET)
+- **Tipo ordine**: LIMIT (mai MARKET)
+
+---
+
+### 💡 Principi Fondamentali
+
+**Il Segreto del Successo:**
+1. **⏱️ TEMPO = Rimanere Investiti**
+   - Non vendere mai in panico durante le crisi
+   - Le crisi sono opportunità (compri a sconto con PAC)
+
+2. **💎 COSTI BASSI = Più Rendimento**
+   - TER 0.20% vs 1.50% = €245,906 di differenza su €100K in 30 anni!
+   - ⚠️ Calcolo teorico con interesse composto al 7% lordo annuo (non una previsione di mercato)
+
+3. **🧘 DISCIPLINA = PAC Continuo**
+   - Investi sempre la stessa cifra mensile
+   - Indipendentemente dal mercato (Dollar Cost Averaging)
+
+4. **📊 BATTERE L'INFLAZIONE**
+   - L'inflazione erode il potere d'acquisto nel tempo
+   - Gli investimenti a lungo termine devono superare l'inflazione
+   - Obiettivo: rendimento reale positivo (rendimento - inflazione > 0)
+
+**Mantra:** *"Il mercato azionario ha SEMPRE recuperato nel lungo termine. Rimango investito."*
+
+---
+
+### 📊 Il Potere dell'Interesse Composto e l'Impatto dei Costi
+
+#### 🧮 Calcolo Dettagliato (Interesse Composto)
+
+**⚠️ IMPORTANTE**: I seguenti calcoli usano un rendimento ipotetico del 7% annuo lordo per illustrare l'impatto matematico dei costi. **Questo NON è una previsione di mercato reale**. I rendimenti storici non garantiscono rendimenti futuri, e i mercati possono avere performance molto diverse.
+
+**Formula dell'Interesse Composto:**
+```
+Capitale Finale = Capitale Iniziale × (1 + Rendimento Netto Annuo)^Anni
+Rendimento Netto = Rendimento Lordo - TER
+```
+
+**Esempio con €100,000 investiti per 30 anni:**
+
+**Scenario 1: ETF a Basso Costo (TER 0.20%)**
+- Rendimento lordo: 7.00% annuo
+- Costi (TER): 0.20% annuo
+- Rendimento netto: 6.80% annuo
+- Capitale finale: €100,000 × (1.068)³⁰ = **€764,645**
+
+**Scenario 2: Fondo Attivo Costoso (TER 1.50%)**
+- Rendimento lordo: 7.00% annuo
+- Costi (TER): 1.50% annuo
+- Rendimento netto: 5.50% annuo
+- Capitale finale: €100,000 × (1.055)³⁰ = **€518,739**
+
+**💰 Differenza: €245,906 persi in costi!**
+
+Questo significa che **ogni 1% di costi in più ti costa circa il 32% del tuo capitale finale** su un orizzonte di 30 anni.
+
+**📉 Impatto Percentuale dei Costi:**
+- Con TER 0.20%: Perdi il 3.5% del potenziale rendimento
+- Con TER 1.50%: Perdi il 32.1% del potenziale rendimento
+
+**Conclusione:** I costi hanno un impatto devastante sul lungo termine a causa dell'interesse composto. Anche differenze apparentemente piccole (1% vs 0.2%) si traducono in centinaia di migliaia di euro persi.
+
+---
+
+### 📈 L'Inflazione: Il Nemico Silenzioso
+
+**Cos'è l'Inflazione?**
+L'inflazione è l'aumento generalizzato dei prezzi nel tempo, che riduce il potere d'acquisto del denaro.
+
+**🚨 Impatto dell'Inflazione (Esempi Reali):**
+
+**Scenario A: Inflazione al 2% annuo (target BCE)**
+- Oggi: €100,000 comprano un'auto
+- Tra 10 anni: servono €121,899 per la stessa auto
+- Tra 20 anni: servono €148,595 per la stessa auto
+- Tra 30 anni: servono €181,136 per la stessa auto
+
+**Scenario B: Inflazione al 3% annuo**
+- Oggi: €100,000
+- Tra 10 anni: potere d'acquisto ridotto a €74,409
+- Tra 20 anni: potere d'acquisto ridotto a €55,368
+- Tra 30 anni: potere d'acquisto ridotto a €41,199
+
+**💡 Lezione Chiave:** Lasciare i soldi fermi sul conto corrente = perdita garantita di potere d'acquisto!
+
+**Perché Investire è Essenziale:**
+
+1. **Preservare il Potere d'Acquisto**: Gli investimenti devono almeno eguagliare l'inflazione
+2. **Rendimento Reale = Rendimento Nominale - Inflazione**
+   - Se guadagni 5% ma l'inflazione è 3%, il rendimento reale è solo 2%
+3. **Azioni e Immobili**: Storicamente hanno battuto l'inflazione nel lungo termine
+4. **Liquidità Eccessiva**: È un rischio, non una sicurezza
+
+**Target Realistico:** Puntare a rendimenti che superino l'inflazione di almeno 2-3% per una crescita reale del patrimonio.
+
+---
+
+### 🎓 Risorse Educative Consigliate
+
+#### 📄 Strumenti Pratici Gratuiti
+
+Ti consigliamo questi tool educativi per approfondire la tua pianificazione finanziaria:
+
+**[One Page Financial](https://onepagefinancial-as.streamlit.app/)**
+Visualizza il tuo piano finanziario completo in una singola pagina. Perfetto per avere una panoramica immediata di emergenze, obiettivi e investimenti. Usa questo tool per monitorare la tua progressione attraverso le 3 fasi!
+
+**[Calcolatore Immobiliare](https://immobiliare-as.streamlit.app/)**
+Pianifica l'acquisto della tua casa: calcola mutui, acconti necessari e confronta affitto vs acquisto. Essenziale per uno dei tuoi obiettivi più importanti. Include simulazioni di ammortamento e analisi costi-opportunità.
+
+**[Finance App](https://financeapp-as.streamlit.app/)**
+Strumento avanzato per la gestione del budget e analisi delle spese. Monitora dove vanno i tuoi soldi e ottimizza il risparmio mensile. Ideale per ottimizzare la FASE 1 e FASE 2 del tuo piano.
+
+**[Overview Asset](https://overviewasset-as.streamlit.app/)**
+Analizza e confronta diverse classi di asset (azioni, obbligazioni, oro, immobili). Comprendi rischi e rendimenti storici per scelte informate. Perfetto per la FASE 3!
+
+**[Portfolio Manager](https://portfolio-as.streamlit.app/)**
+Costruisci e monitora il tuo portafoglio di investimenti. Simula diverse allocazioni e traccia le performance nel tempo. Usa questo tool per implementare la tua allocazione della FASE 3.
+
+---
+
+#### 📚 Libri Consigliati
+
+**In Italiano:**
+- "L'investitore intelligente" - Benjamin Graham
+- "Un passo avanti a Wall Street" - Burton Malkiel  
+- "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
+- "Educazione finanziaria" - Banca d'Italia (gratuito online)
+
+**In Inglese:**
+- "The Intelligent Investor" - Benjamin Graham
+- "A Random Walk Down Wall Street" - Burton Malkiel
+- "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
+- "Your Money or Your Life" - Vicki Robin & Joe Dominguez
+
+**In Tedesco:**
+- "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
+- "Der reichste Mann von Babylon" - George S. Clason
+- "Rich Dad Poor Dad" - Robert Kiyosaki (tradotto)
+
+---
+
+#### 📺 Canali YouTube Educativi
+
+Per approfondire la tua educazione finanziaria, ecco alcuni canali YouTube consigliati:
+
+**Canali Italiani:**
+- **Paolo Coletti** - Finanza personale e investimenti passivi
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) e investimenti
+- **Pietro Michelangeli** - Educazione finanziaria e risparmio
+
+**Canali Inglesi:**
+Cerca canali di finanza personale in inglese focalizzati su:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**Canali Tedeschi:**
+Cerca canali di finanza personale in tedesco focalizzati su:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Consiglio:** Verifica sempre la qualità dei contenuti e confronta diverse fonti. I migliori canali educativi sono quelli che insegnano principi, non che vendono prodotti specifici.
+
+---
+
+### ⚠️ Cosa NON Fare
+
+❌ **Non investire in:**
+- Prodotti che non capisci
+- Gestioni patrimoniali con costi >1%
+- Fondi attivi con TER >1% (raramente battono gli indici)
+- Criptovalute come investimento principale
+- Azioni singole se sei principiante
+
+❌ **Non fidarti di:**
+- Promesse di rendimenti garantiti >10%/anno
+- "Opportunità irripetibili" con urgenza
+- Prodotti finanziari venduti porta-a-porta
+
+✅ **Fidati di:**
+- Dati storici e statistiche
+- Costi bassi e trasparenti
+- Diversificazione
+- Tempo e disciplina
+- **Rendimenti che battono l'inflazione nel lungo termine**
 
 ---
 """
@@ -166,117 +410,380 @@ il tuo potere d'acquisto nel tempo!
     return report
 
 
-def _genera_report_fase1_en(capitale_attuale, fondo_emergenza, differenza, uscite_mensili, 
-                            risparmio_mensile, mesi_rientro=None):
-    """Genera il report FASE 1 in inglese."""
+def _genera_report_fase3_en(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione):
+    """Generates PHASE 3 report in English with complete details."""
+    
     report = f"""
-## 🛡️ PHASE 1: Emergency Fund
+## 📈 PHASE 3: Long-Term Investments
 
-### Absolute Priority!
+### Grow Your Wealth
 
-The **Emergency Fund** is the foundation of your financial security. 
-It protects you from unexpected events like job loss, medical expenses, or urgent repairs.
+Congratulations! You've completed the basics: Emergency Fund and Goal Planning. 
+Now you can invest for the future.
 
-**The rule**: You must have liquidity equal to **6 months of expenses**.
+### Investment Availability
 
-### Your Emergency Fund
-
-- 💰 **Current Capital**: {formatta_valuta(capitale_attuale)}
-- 🎯 **Emergency Fund Target**: {formatta_valuta(fondo_emergenza)} (6 × {formatta_valuta(uscite_mensili)})
+**Monthly Investable Amount**: {formatta_valuta(disponibilita_mensile)}
 """
     
-    if differenza < 0:
-        report += f"""
-- ⚠️ **Status**: Your fund is **INCOMPLETE**
-- 📉 **Missing Amount**: {formatta_valuta(abs(differenza))}
-
-### 🚨 AUTOMATIC RECOVERY PLAN
-
-Before proceeding with any other financial goal, you must complete your Emergency Fund!
-
-"""
-        if mesi_rientro and mesi_rientro != float('inf'):
-            report += f"""
-**Accumulation Plan:**
-- 💵 **Available Monthly Savings**: {formatta_valuta(risparmio_mensile)}
-- ⏱️ **Time Required**: {mesi_rientro} months
-- 📅 **Monthly Amount to Allocate**: {formatta_valuta(risparmio_mensile)} (100% of savings)
-
-**What to do:**
-1. **Allocate 100% of your monthly savings** ({formatta_valuta(risparmio_mensile)}) to the Emergency Fund for the next **{mesi_rientro} months**
-2. **Keep this liquidity** in an easily accessible account (savings account or checking account)
-3. **Do not invest** this money in stocks or risky instruments
-4. **After {mesi_rientro} months**, you will have completed your safety foundation and can consider investments
-
-**⚠️ ABSOLUTE PRIORITY**: Complete your Emergency Fund before investing! Phases 2 and 3 are shown below to help you with complete planning.
-"""
-        else:
-            report += """
-⚠️ **WARNING**: Your monthly savings are insufficient or zero. 
-
-**What to do:**
-1. **Increase your income** (second job, freelancing, selling non-essential items)
-2. **Drastically reduce expenses** to create a savings margin
-3. **Review your budget** to find at least €100-200 per month to allocate to the fund
-
-**⚠️ IMPORTANT**: This is a fundamental prerequisite before considering any investments. Phases 2 and 3 are shown below for complete planning.
-"""
-        
+    if capitale_investibile_subito > 0:
+        report += f"**Capital to Invest Immediately (lump sum)**: {formatta_valuta(capitale_investibile_subito)}\n\n"
         report += """
----
-
-### 💡 Advice for Beginners
-
-The Emergency Fund is not an "extra", it's a **must**. Without it, any unexpected event 
-could force you to go into debt or sell investments at a loss.
-
----
-
-### 📊 Inflation Consideration
-
-**Why must the Emergency Fund be in cash?**
-
-Even though **inflation erodes the purchasing power** of cash over time, the Emergency Fund 
-MUST remain **immediately available** and **risk-free**:
-
-- ✅ **Immediate access**: In an emergency, you can't wait for investment sales
-- ✅ **Zero risk of losses**: Investments can be down exactly when you need them
-- ⚠️ **Inflation**: Yes, cash loses value (about 2-3% per year), but it's the price of security
-
-**💡 The inflation solution**:
-1. **Complete the Emergency Fund** (PHASE 1) - Liquidity
-2. **Plan your goals** (PHASE 2) - Protected PACs
-3. **Invest the rest** (PHASE 3) - Here you beat inflation!
-
-Only AFTER completing the Emergency Fund can you invest to beat inflation in the long term.
+💡 **Recommended Strategy**: Invest the initial capital in a single lump sum following 
+the allocation indicated below, and continue with regular monthly investments (PAC).
 """
-    else:
-        report += f"""
-- ✅ **Status**: Your fund is **COMPLETE**!
-- 💪 **Surplus**: {formatta_valuta(differenza)}
+    
+    report += "\n"
+    
+    if disponibilita_mensile <= 0 and capitale_investibile_subito <= 0:
+        report += """
+### ⚠️ No Availability
 
-**Congratulations!** You have a solid foundation of financial security. 
-Now you can proceed with subsequent phases.
+Currently you have no availability for long-term investments. 
+Focus on completing previous phases or reduce your expenses.
 
-**💡 Philosophy: "Invest First"**
+---
+"""
+        return report
+    
+    # Generate allocation
+    allocazione = genera_allocazione_investimenti(profilo_rischio, anni_pensione)
+    
+    report += f"""
+### 🎯 Your Portfolio Allocation
 
-Your surplus capital will be allocated according to this philosophy:
-1. First priority: Cover any gaps in future goals
-2. Second priority: **Invest immediately** the rest to make it grow
+**Risk Profile**: {profilo_rischio}  
+**Time Horizon**: {anni_pensione} years to retirement
+
+Based on your profile and time horizon, here's the suggested allocation:
+
+"""
+    
+    for asset, percentuale in allocazione.items():
+        asset_en = {"Azioni": "Stocks", "Obbligazioni": "Bonds", "Oro": "Gold"}.get(asset, asset)
+        if disponibilita_mensile > 0:
+            importo_mensile = disponibilita_mensile * (percentuale / 100)
+            report += f"- **{asset_en}**: {percentuale}% → {formatta_valuta(importo_mensile)} per month"
+        else:
+            report += f"- **{asset_en}**: {percentuale}%"
+        
+        if capitale_investibile_subito > 0:
+            importo_lump = capitale_investibile_subito * (percentuale / 100)
+            report += f" (+ {formatta_valuta(importo_lump)} lump sum)"
+        
+        report += "\n"
+    
+    report += """
 
 ---
 
-### 📊 Protection Against Inflation
+### 📚 Asset and Instrument Details
 
-Now that you've completed the Emergency Fund, you can focus on **beating inflation** 
-with investments:
+#### 🌍 Stocks - Global Equity Component
 
-- ✅ Your "safety cushion" is secure in cash
-- 📈 Surplus capital can be invested to **grow beyond inflation**
-- 💰 Goal: positive real returns (return - inflation > 0)
+The equity component is the growth engine of your portfolio. To maximize diversification:
 
-In subsequent phases you'll learn how to build a portfolio that preserves and increases 
-your purchasing power over time!
+**Recommended Instruments (ETFs):**
+
+1. **MSCI World** - Developed Countries (≈1,500 global stocks)
+2. **MSCI ACWI or FTSE All-World** - Complete Global (≈3,000 stocks)
+
+**ETF Selection Criteria:**
+- TER (annual costs) <0.25%
+- Assets under management >€100M (for liquidity)
+- Physical replication (directly owns securities)
+- Distribution: Prefer "Accumulating" (automatic dividend reinvestment)
+
+---
+
+#### 🏦 Bonds - Stability Component
+
+Bonds reduce portfolio volatility and provide stable income.
+
+**🚨 PRIORITY: Invest ONLY in bonds denominated in YOUR currency (EUR)**
+
+**Recommended Instruments:**
+
+1. **Eurozone Government Bond ETFs** (Investment Grade)
+2. **Eurozone Corporate Bond ETFs** (Investment Grade, BBB- rating or higher)
+
+**Selection Criteria:**
+- EUR denomination (no currency risk)
+- TER <0.20%
+- Minimum rating BBB- (Investment Grade)
+- Average duration 5-10 years
+
+---
+
+#### 🥇 Gold - Protection and Decorrelation
+
+Gold protects against inflation and reduces portfolio risk.
+
+**Recommended Instruments:**
+
+1. **Physical Gold ETC** (backed by real gold in vaults)
+   - TER <0.25%
+   - Prefer those domiciled in Switzerland/UK for security
+
+---
+
+### 💰 Tax Aspects
+
+**Taxation (varies by country):**
+- Check your local capital gains tax rate
+- Different tax regimes available depending on broker
+
+**Tax Management - Three Options:**
+
+**1. Do-It-Yourself (Tax Return)**
+- ✅ No additional cost
+- ⚠️ Requires time and tax knowledge
+- ⚠️ Risk of filing errors
+- 💡 **Suitable if**: you have few transactions and are willing to study tax regulations
+
+**2. Tax Advisor/Accountant**
+- ✅ Greater security and accuracy
+- ✅ Saves time and stress
+- ⚠️ Professional service cost (varies based on complexity)
+- 💡 **Suitable if**: you have many transactions, complex situation, or prefer to delegate
+
+**3. Broker with Automatic Tax Withholding**
+- ✅ Broker calculates and withholds taxes automatically
+- ✅ Greatly simplifies tax filing
+- ✅ Reduces risk of errors
+- 💡 **Recommended option** for beginners or those with limited tax experience
+
+**💡 Tip**: Evaluate your tax competence level, available time, and portfolio complexity. For starters, a broker with automatic tax handling is often the wisest choice.
+
+---
+
+**Choosing a Broker:**
+
+When choosing an investment platform, evaluate:
+- Transaction and custody costs
+- Availability of instruments you're interested in (ETFs, bonds, etc.)
+- User interface ease of use
+- Customer service in your language
+- **Tax regime offered**
+
+**💡 Tip**: Compare different options, read independent reviews, and choose based on your specific needs. There's no "best broker" in absolute terms, but the one most suitable for you.
+
+---
+
+### 🎯 Action Plan
+
+**1. Educate Yourself:**
+- Study on independent educational sites (see resources section below)
+- Understand the difference between stocks, bonds, ETFs
+- Learn what TER and tracking error are
+
+**2. Choose Instruments:**
+- Use ETF screeners to find the best products
+- Compare at least 3 ETFs per category
+- Verify tax domicile (Ireland/Luxembourg are optimal for EU)
+
+**3. Open an Account:**
+- Compare brokers
+- Complete KYC (Know Your Customer)
+- Deposit initial capital
+
+**4. Set Up Automatic PAC:**
+- Configure automatic monthly investments
+- **Frequency**: Monthly
+- **Timing**: If doing manual orders, use central hours (10:00-16:00 CET)
+- **Order type**: LIMIT (never MARKET)
+
+---
+
+### 💡 Fundamental Principles
+
+**The Secret to Success:**
+1. **⏱️ TIME = Stay Invested**
+   - Never sell in panic during crises
+   - Crises are opportunities (buy at discount with PAC)
+
+2. **💎 LOW COSTS = More Returns**
+   - TER 0.20% vs 1.50% = €245,906 difference on €100K over 30 years!
+   - ⚠️ Theoretical calculation with 7% gross annual compound interest (not a market forecast)
+
+3. **🧘 DISCIPLINE = Continuous PAC**
+   - Always invest the same monthly amount
+   - Regardless of market conditions (Dollar Cost Averaging)
+
+4. **📊 BEAT INFLATION**
+   - Inflation erodes purchasing power over time
+   - Long-term investments must exceed inflation
+   - Goal: positive real return (return - inflation > 0)
+
+**Mantra:** *"The stock market has ALWAYS recovered in the long term. I stay invested."*
+
+---
+
+### 📊 The Power of Compound Interest and Cost Impact
+
+#### 🧮 Detailed Calculation (Compound Interest)
+
+**⚠️ IMPORTANT**: The following calculations use a hypothetical 7% annual gross return to illustrate the mathematical impact of costs. **This is NOT a real market forecast**. Historical returns do not guarantee future returns, and markets can perform very differently.
+
+**Compound Interest Formula:**
+```
+Final Capital = Initial Capital × (1 + Net Annual Return)^Years
+Net Return = Gross Return - TER
+```
+
+**Example with €100,000 invested for 30 years:**
+
+**Scenario 1: Low-Cost ETF (TER 0.20%)**
+- Gross return: 7.00% per year
+- Costs (TER): 0.20% per year
+- Net return: 6.80% per year
+- Final capital: €100,000 × (1.068)³⁰ = **€764,645**
+
+**Scenario 2: Expensive Active Fund (TER 1.50%)**
+- Gross return: 7.00% per year
+- Costs (TER): 1.50% per year
+- Net return: 5.50% per year
+- Final capital: €100,000 × (1.055)³⁰ = **€518,739**
+
+**💰 Difference: €245,906 lost to costs!**
+
+This means that **every 1% extra in costs costs you approximately 32% of your final capital** over a 30-year horizon.
+
+**📉 Percentage Impact of Costs:**
+- With TER 0.20%: You lose 3.5% of potential returns
+- With TER 1.50%: You lose 32.1% of potential returns
+
+**Conclusion:** Costs have a devastating long-term impact due to compound interest. Even seemingly small differences (1% vs 0.2%) translate into hundreds of thousands of euros lost.
+
+---
+
+### 📈 Inflation: The Silent Enemy
+
+**What is Inflation?**
+Inflation is the general increase in prices over time, which reduces the purchasing power of money.
+
+**🚨 Impact of Inflation (Real Examples):**
+
+**Scenario A: 2% annual inflation (ECB target)**
+- Today: €100,000 buys a car
+- In 10 years: need €121,899 for the same car
+- In 20 years: need €148,595 for the same car
+- In 30 years: need €181,136 for the same car
+
+**Scenario B: 3% annual inflation**
+- Today: €100,000
+- In 10 years: purchasing power reduced to €74,409
+- In 20 years: purchasing power reduced to €55,368
+- In 30 years: purchasing power reduced to €41,199
+
+**💡 Key Lesson:** Leaving money idle in checking account = guaranteed loss of purchasing power!
+
+**Why Investing is Essential:**
+
+1. **Preserve Purchasing Power**: Investments must at least match inflation
+2. **Real Return = Nominal Return - Inflation**
+   - If you earn 5% but inflation is 3%, real return is only 2%
+3. **Stocks and Real Estate**: Historically have beaten inflation in the long term
+4. **Excessive Liquidity**: Is a risk, not security
+
+**Realistic Target:** Aim for returns that exceed inflation by at least 2-3% for real wealth growth.
+
+---
+
+### 🎓 Recommended Educational Resources
+
+#### 📄 Free Practical Tools
+
+We recommend these educational tools to deepen your financial planning:
+
+**[One Page Financial](https://onepagefinancial-as.streamlit.app/)**
+Visualize your complete financial plan on a single page. Perfect for an immediate overview of emergencies, goals and investments. Use this tool to monitor your progression through the 3 phases!
+
+**[Real Estate Calculator](https://immobiliare-as.streamlit.app/)**
+Plan your home purchase: calculate mortgages, required down payments and compare rent vs buy. Essential for one of your most important goals. Includes amortization simulations and cost-opportunity analysis.
+
+**[Finance App](https://financeapp-as.streamlit.app/)**
+Advanced tool for budget management and expense analysis. Track where your money goes and optimize monthly savings. Ideal for optimizing PHASE 1 and PHASE 2 of your plan.
+
+**[Overview Asset](https://overviewasset-as.streamlit.app/)**
+Analyze and compare different asset classes (stocks, bonds, gold, real estate). Understand historical risks and returns for informed choices. Perfect for PHASE 3!
+
+**[Portfolio Manager](https://portfolio-as.streamlit.app/)**
+Build and monitor your investment portfolio. Simulate different allocations and track performance over time. Use this tool to implement your PHASE 3 allocation.
+
+---
+
+#### 📚 Recommended Books
+
+**In Italian:**
+- "L'investitore intelligente" - Benjamin Graham
+- "Un passo avanti a Wall Street" - Burton Malkiel  
+- "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
+- "Educazione finanziaria" - Banca d'Italia (free online)
+
+**In English:**
+- "The Intelligent Investor" - Benjamin Graham
+- "A Random Walk Down Wall Street" - Burton Malkiel
+- "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
+- "Your Money or Your Life" - Vicki Robin & Joe Dominguez
+
+**In German:**
+- "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
+- "Der reichste Mann von Babylon" - George S. Clason
+- "Rich Dad Poor Dad" - Robert Kiyosaki (translated)
+
+---
+
+#### 📺 Educational YouTube Channels
+
+To deepen your financial education, here are some recommended YouTube channels:
+
+**Italian Channels:**
+- **Paolo Coletti** - Personal finance and passive investing
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) and investing
+- **Pietro Michelangeli** - Financial education and saving
+
+**English Channels:**
+Look for English personal finance channels focused on:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**German Channels:**
+Look for German personal finance channels focused on:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Tip:** Always verify content quality and compare different sources. The best educational channels are those that teach principles, not sell specific products.
+
+---
+
+### ⚠️ What NOT to Do
+
+❌ **Don't invest in:**
+- Products you don't understand
+- Asset management with costs >1%
+- Active funds with TER >1% (rarely beat indexes)
+- Cryptocurrencies as main investment
+- Individual stocks if you're a beginner
+
+❌ **Don't trust:**
+- Promises of guaranteed returns >10%/year
+- "Unmissable opportunities" with urgency
+- Financial products sold door-to-door
+
+✅ **Trust:**
+- Historical data and statistics
+- Low and transparent costs
+- Diversification
+- Time and discipline
+- **Returns that beat inflation in the long term**
 
 ---
 """
@@ -284,117 +791,380 @@ your purchasing power over time!
     return report
 
 
-def _genera_report_fase1_de(capitale_attuale, fondo_emergenza, differenza, uscite_mensili, 
-                            risparmio_mensile, mesi_rientro=None):
-    """Genera il report FASE 1 in tedesco."""
+def _genera_report_fase3_de(disponibilita_mensile, capitale_investibile_subito, profilo_rischio, anni_pensione):
+    """Generiert PHASE 3 Bericht auf Deutsch mit vollständigen Details."""
+    
     report = f"""
-## 🛡️ PHASE 1: Notgroschen
+## 📈 PHASE 3: Langfristige Investitionen
 
-### Absolute Priorität!
+### Lassen Sie Ihr Vermögen wachsen
 
-Der **Notgroschen** ist die Grundlage Ihrer finanziellen Sicherheit. 
-Er schützt Sie vor unerwarteten Ereignissen wie Jobverlust, medizinischen Ausgaben oder dringenden Reparaturen.
+Herzlichen Glückwunsch! Sie haben die Grundlagen abgeschlossen: Notgroschen und Zielplanung. 
+Jetzt können Sie für die Zukunft investieren.
 
-**Die Regel**: Sie müssen Liquidität in Höhe von **6 Monatsausgaben** haben.
+### Investitionsverfügbarkeit
 
-### Ihr Notgroschen
-
-- 💰 **Aktuelles Kapital**: {formatta_valuta(capitale_attuale)}
-- 🎯 **Notgroschen-Ziel**: {formatta_valuta(fondo_emergenza)} (6 × {formatta_valuta(uscite_mensili)})
+**Monatlich investierbarer Betrag**: {formatta_valuta(disponibilita_mensile)}
 """
     
-    if differenza < 0:
-        report += f"""
-- ⚠️ **Status**: Ihr Notgroschen ist **UNVOLLSTÄNDIG**
-- 📉 **Fehlender Betrag**: {formatta_valuta(abs(differenza))}
-
-### 🚨 AUTOMATISCHER RÜCKKEHRPLAN
-
-Bevor Sie mit anderen finanziellen Zielen fortfahren, müssen Sie Ihren Notgroschen vervollständigen!
-
-"""
-        if mesi_rientro and mesi_rientro != float('inf'):
-            report += f"""
-**Ansparplan:**
-- 💵 **Verfügbare monatliche Ersparnisse**: {formatta_valuta(risparmio_mensile)}
-- ⏱️ **Erforderliche Zeit**: {mesi_rientro} Monate
-- 📅 **Monatlich zuzuweisender Betrag**: {formatta_valuta(risparmio_mensile)} (100% der Ersparnisse)
-
-**Was zu tun ist:**
-1. **Weisen Sie 100% Ihrer monatlichen Ersparnisse** ({formatta_valuta(risparmio_mensile)}) dem Notgroschen für die nächsten **{mesi_rientro} Monate** zu
-2. **Bewahren Sie diese Liquidität** auf einem leicht zugänglichen Konto auf (Sparkonto oder Girokonto)
-3. **Investieren Sie nicht** dieses Geld in Aktien oder riskante Instrumente
-4. **Nach {mesi_rientro} Monaten** werden Sie Ihre Sicherheitsgrundlage abgeschlossen haben und können Investitionen in Betracht ziehen
-
-**⚠️ ABSOLUTE PRIORITÄT**: Vervollständigen Sie Ihren Notgroschen vor dem Investieren! Die Phasen 2 und 3 werden unten gezeigt, um Ihnen bei der vollständigen Planung zu helfen.
-"""
-        else:
-            report += """
-⚠️ **WARNUNG**: Ihre monatlichen Ersparnisse sind unzureichend oder null. 
-
-**Was zu tun ist:**
-1. **Erhöhen Sie Ihr Einkommen** (Zweitjob, Freelancing, Verkauf nicht essentieller Gegenstände)
-2. **Reduzieren Sie die Ausgaben drastisch**, um eine Sparmarge zu schaffen
-3. **Überprüfen Sie Ihr Budget**, um mindestens 100-200€ pro Monat für den Notgroschen zu finden
-
-**⚠️ WICHTIG**: Dies ist eine grundlegende Voraussetzung, bevor Sie Investitionen in Betracht ziehen. Die Phasen 2 und 3 werden unten für die vollständige Planung gezeigt.
-"""
-        
+    if capitale_investibile_subito > 0:
+        report += f"**Sofort zu investierendes Kapital (Einmalanlage)**: {formatta_valuta(capitale_investibile_subito)}\n\n"
         report += """
----
-
-### 💡 Rat für Anfänger
-
-Der Notgroschen ist kein "Extra", sondern ein **Muss**. Ohne ihn könnte Sie jedes unerwartete Ereignis 
-zwingen, sich zu verschulden oder Investitionen mit Verlust zu verkaufen.
-
----
-
-### 📊 Inflationsüberlegung
-
-**Warum muss der Notgroschen in Bargeld sein?**
-
-Auch wenn die **Inflation die Kaufkraft** von Bargeld im Laufe der Zeit erodiert, MUSS der Notgroschen 
-**sofort verfügbar** und **risikofrei** bleiben:
-
-- ✅ **Sofortiger Zugang**: Im Notfall können Sie nicht auf Investitionsverkäufe warten
-- ✅ **Null Verlustrisiko**: Investitionen können genau dann im Minus sein, wenn Sie sie brauchen
-- ⚠️ **Inflation**: Ja, Bargeld verliert an Wert (etwa 2-3% pro Jahr), aber das ist der Preis der Sicherheit
-
-**💡 Die Inflationslösung**:
-1. **Notgroschen vervollständigen** (PHASE 1) - Liquidität
-2. **Ziele planen** (PHASE 2) - Geschützte PACs
-3. **Den Rest investieren** (PHASE 3) - Hier schlagen Sie die Inflation!
-
-Erst NACH Vervollständigung des Notgroschens können Sie investieren, um die Inflation langfristig zu schlagen.
+💡 **Empfohlene Strategie**: Investieren Sie das Anfangskapital in einer Einmalanlage gemäß 
+der unten angegebenen Allokation und fahren Sie mit regelmäßigen monatlichen Investitionen (PAC) fort.
 """
-    else:
-        report += f"""
-- ✅ **Status**: Ihr Notgroschen ist **VOLLSTÄNDIG**!
-- 💪 **Überschuss**: {formatta_valuta(differenza)}
+    
+    report += "\n"
+    
+    if disponibilita_mensile <= 0 and capitale_investibile_subito <= 0:
+        report += """
+### ⚠️ Keine Verfügbarkeit
 
-**Herzlichen Glückwunsch!** Sie haben eine solide Grundlage finanzieller Sicherheit. 
-Jetzt können Sie mit den nachfolgenden Phasen fortfahren.
+Derzeit haben Sie keine Verfügbarkeit für langfristige Investitionen. 
+Konzentrieren Sie sich auf das Abschließen vorheriger Phasen oder reduzieren Sie Ihre Ausgaben.
 
-**💡 Philosophie: "Zuerst Investieren"**
+---
+"""
+        return report
+    
+    # Allokation generieren
+    allocazione = genera_allocazione_investimenti(profilo_rischio, anni_pensione)
+    
+    report += f"""
+### 🎯 Ihre Portfolio-Allokation
 
-Ihr Überschusskapital wird nach dieser Philosophie zugewiesen:
-1. Erste Priorität: Deckung eventueller Lücken bei zukünftigen Zielen
-2. Zweite Priorität: **Sofort investieren** den Rest, um ihn wachsen zu lassen
+**Risikoprofil**: {profilo_rischio}  
+**Zeithorizont**: {anni_pensione} Jahre bis zur Rente
+
+Basierend auf Ihrem Profil und Zeithorizont ist hier die vorgeschlagene Allokation:
+
+"""
+    
+    for asset, percentuale in allocazione.items():
+        asset_de = {"Azioni": "Aktien", "Obbligazioni": "Anleihen", "Oro": "Gold"}.get(asset, asset)
+        if disponibilita_mensile > 0:
+            importo_mensile = disponibilita_mensile * (percentuale / 100)
+            report += f"- **{asset_de}**: {percentuale}% → {formatta_valuta(importo_mensile)} pro Monat"
+        else:
+            report += f"- **{asset_de}**: {percentuale}%"
+        
+        if capitale_investibile_subito > 0:
+            importo_lump = capitale_investibile_subito * (percentuale / 100)
+            report += f" (+ {formatta_valuta(importo_lump)} Einmalanlage)"
+        
+        report += "\n"
+    
+    report += """
 
 ---
 
-### 📊 Schutz vor Inflation
+### 📚 Details zu Vermögenswerten und Instrumenten
 
-Jetzt, da Sie den Notgroschen vervollständigt haben, können Sie sich darauf konzentrieren, **die Inflation zu schlagen** 
-mit Investitionen:
+#### 🌍 Aktien - Globale Aktienkomponente
 
-- ✅ Ihr "Sicherheitspolster" ist sicher in Bargeld
-- 📈 Überschusskapital kann investiert werden, um **über die Inflation hinaus zu wachsen**
-- 💰 Ziel: positive Realrenditen (Rendite - Inflation > 0)
+Die Aktienkomponente ist der Wachstumsmotor Ihres Portfolios. Um die Diversifikation zu maximieren:
 
-In den folgenden Phasen lernen Sie, wie Sie ein Portfolio aufbauen, das Ihre Kaufkraft 
-im Laufe der Zeit bewahrt und erhöht!
+**Empfohlene Instrumente (ETFs):**
+
+1. **MSCI World** - Entwickelte Länder (≈1.500 globale Aktien)
+2. **MSCI ACWI oder FTSE All-World** - Vollständig global (≈3.000 Aktien)
+
+**ETF-Auswahlkriterien:**
+- TER (jährliche Kosten) <0,25%
+- Verwaltetes Vermögen >€100M (für Liquidität)
+- Physische Replikation (besitzt direkt Wertpapiere)
+- Verteilung: Bevorzugen Sie "Thesaurierend" (automatische Dividendenreinvestition)
+
+---
+
+#### 🏦 Anleihen - Stabilitätskomponente
+
+Anleihen reduzieren die Portfolio-Volatilität und bieten stabiles Einkommen.
+
+**🚨 PRIORITÄT: Investieren Sie NUR in Anleihen, die in IHRER Währung (EUR) denominiert sind**
+
+**Empfohlene Instrumente:**
+
+1. **Eurozone-Staatsanleihen-ETFs** (Investment Grade)
+2. **Eurozone-Unternehmensanleihen-ETFs** (Investment Grade, BBB- Rating oder höher)
+
+**Auswahlkriterien:**
+- EUR-Denominierung (kein Währungsrisiko)
+- TER <0,20%
+- Mindestrating BBB- (Investment Grade)
+- Durchschnittliche Duration 5-10 Jahre
+
+---
+
+#### 🥇 Gold - Schutz und Dekorrelation
+
+Gold schützt vor Inflation und reduziert das Portfolio-Risiko.
+
+**Empfohlene Instrumente:**
+
+1. **Physische Gold-ETCs** (besichert durch echtes Gold in Tresoren)
+   - TER <0,25%
+   - Bevorzugen Sie solche mit Domizil in der Schweiz/UK für Sicherheit
+
+---
+
+### 💰 Steuerliche Aspekte
+
+**Besteuerung (variiert je nach Land):**
+- Prüfen Sie Ihren lokalen Kapitalertragsteuersatz
+- Verschiedene Steuerregime je nach Broker verfügbar
+
+**Steuerverwaltung - Drei Optionen:**
+
+**1. Selbstgemacht (Steuererklärung)**
+- ✅ Keine zusätzlichen Kosten
+- ⚠️ Erfordert Zeit und Steuerkenntnisse
+- ⚠️ Risiko von Anmeldefehlern
+- 💡 **Geeignet wenn**: Sie wenige Transaktionen haben und bereit sind, Steuervorschriften zu studieren
+
+**2. Steuerberater/Buchhalter**
+- ✅ Größere Sicherheit und Genauigkeit
+- ✅ Spart Zeit und Stress
+- ⚠️ Kosten für professionellen Service (variiert je nach Komplexität)
+- 💡 **Geeignet wenn**: Sie viele Transaktionen haben, komplexe Situation oder Delegation bevorzugen
+
+**3. Broker mit automatischer Steuereinbehaltung**
+- ✅ Broker berechnet und behält Steuern automatisch ein
+- ✅ Vereinfacht die Steuererklärung erheblich
+- ✅ Reduziert das Fehlerrisiko
+- 💡 **Empfohlene Option** für Anfänger oder solche mit begrenzter Steuererfahrung
+
+**💡 Tipp**: Bewerten Sie Ihr Steuerkompetenzniveau, verfügbare Zeit und Portfolio-Komplexität. Für Anfänger ist ein Broker mit automatischer Steuerabwicklung oft die klügste Wahl.
+
+---
+
+**Auswahl eines Brokers:**
+
+Bei der Auswahl einer Investitionsplattform bewerten Sie:
+- Transaktions- und Depotkosten
+- Verfügbarkeit der Instrumente, die Sie interessieren (ETFs, Anleihen, etc.)
+- Benutzerfreundlichkeit der Oberfläche
+- Kundenservice in Ihrer Sprache
+- **Angebotenes Steuerregime**
+
+**💡 Tipp**: Vergleichen Sie verschiedene Optionen, lesen Sie unabhängige Bewertungen und wählen Sie basierend auf Ihren spezifischen Bedürfnissen. Es gibt keinen "besten Broker" im absoluten Sinne, sondern den für Sie am besten geeigneten.
+
+---
+
+### 🎯 Aktionsplan
+
+**1. Bilden Sie sich weiter:**
+- Studieren Sie auf unabhängigen Bildungsseiten (siehe Ressourcen-Abschnitt unten)
+- Verstehen Sie den Unterschied zwischen Aktien, Anleihen, ETFs
+- Lernen Sie, was TER und Tracking Error sind
+
+**2. Wählen Sie Instrumente:**
+- Verwenden Sie ETF-Screener, um die besten Produkte zu finden
+- Vergleichen Sie mindestens 3 ETFs pro Kategorie
+- Überprüfen Sie die Steuerdomizilin (Irland/Luxemburg sind optimal für EU)
+
+**3. Eröffnen Sie ein Konto:**
+- Vergleichen Sie Broker
+- Schließen Sie KYC (Know Your Customer) ab
+- Zahlen Sie Anfangskapital ein
+
+**4. Richten Sie automatischen PAC ein:**
+- Konfigurieren Sie automatische monatliche Investitionen
+- **Häufigkeit**: Monatlich
+- **Zeitpunkt**: Bei manuellen Orders zentrale Stunden nutzen (10:00-16:00 CET)
+- **Ordertyp**: LIMIT (niemals MARKET)
+
+---
+
+### 💡 Grundlegende Prinzipien
+
+**Das Erfolgsgeheimnis:**
+1. **⏱️ ZEIT = Investiert bleiben**
+   - Verkaufen Sie niemals in Panik während Krisen
+   - Krisen sind Gelegenheiten (kaufen Sie mit Rabatt durch PAC)
+
+2. **💎 NIEDRIGE KOSTEN = Mehr Rendite**
+   - TER 0,20% vs. 1,50% = €245.906 Unterschied auf €100K über 30 Jahre!
+   - ⚠️ Theoretische Berechnung mit 7% Brutto-Jahreszins (keine Marktprognose)
+
+3. **🧘 DISZIPLIN = Kontinuierlicher PAC**
+   - Investieren Sie immer denselben monatlichen Betrag
+   - Unabhängig von Marktbedingungen (Dollar Cost Averaging)
+
+4. **📊 INFLATION SCHLAGEN**
+   - Inflation erodiert die Kaufkraft im Laufe der Zeit
+   - Langfristige Investitionen müssen die Inflation übertreffen
+   - Ziel: positive Realrendite (Rendite - Inflation > 0)
+
+**Mantra:** *"Der Aktienmarkt hat sich langfristig IMMER erholt. Ich bleibe investiert."*
+
+---
+
+### 📊 Die Kraft des Zinseszinses und die Kostenauswirkung
+
+#### 🧮 Detaillierte Berechnung (Zinseszins)
+
+**⚠️ WICHTIG**: Die folgenden Berechnungen verwenden eine hypothetische jährliche Bruttorendite von 7%, um die mathematische Auswirkung der Kosten zu veranschaulichen. **Dies ist KEINE echte Marktprognose**. Historische Renditen garantieren keine zukünftigen Renditen, und Märkte können sehr unterschiedlich performen.
+
+**Zinseszins-Formel:**
+```
+Endkapital = Anfangskapital × (1 + Netto-Jahresrendite)^Jahre
+Nettorendite = Bruttorendite - TER
+```
+
+**Beispiel mit €100.000 investiert für 30 Jahre:**
+
+**Szenario 1: Kostengünstiger ETF (TER 0,20%)**
+- Bruttorendite: 7,00% pro Jahr
+- Kosten (TER): 0,20% pro Jahr
+- Nettorendite: 6,80% pro Jahr
+- Endkapital: €100.000 × (1,068)³⁰ = **€764.645**
+
+**Szenario 2: Teurer aktiver Fonds (TER 1,50%)**
+- Bruttorendite: 7,00% pro Jahr
+- Kosten (TER): 1,50% pro Jahr
+- Nettorendite: 5,50% pro Jahr
+- Endkapital: €100.000 × (1,055)³⁰ = **€518.739**
+
+**💰 Unterschied: €245.906 durch Kosten verloren!**
+
+Das bedeutet, dass **jedes zusätzliche 1% an Kosten Sie etwa 32% Ihres Endkapitals kostet** über einen 30-Jahres-Horizont.
+
+**📉 Prozentuale Auswirkung der Kosten:**
+- Mit TER 0,20%: Sie verlieren 3,5% der potenziellen Rendite
+- Mit TER 1,50%: Sie verlieren 32,1% der potenziellen Rendite
+
+**Fazit:** Kosten haben aufgrund des Zinseszinses eine verheerende langfristige Auswirkung. Selbst scheinbar kleine Unterschiede (1% vs. 0,2%) führen zu Hunderttausenden von Euro an Verlusten.
+
+---
+
+### 📈 Inflation: Der stille Feind
+
+**Was ist Inflation?**
+Inflation ist der allgemeine Preisanstieg im Laufe der Zeit, der die Kaufkraft des Geldes verringert.
+
+**🚨 Auswirkung der Inflation (Reale Beispiele):**
+
+**Szenario A: 2% jährliche Inflation (EZB-Ziel)**
+- Heute: €100.000 kaufen ein Auto
+- In 10 Jahren: benötigen €121.899 für dasselbe Auto
+- In 20 Jahren: benötigen €148.595 für dasselbe Auto
+- In 30 Jahren: benötigen €181.136 für dasselbe Auto
+
+**Szenario B: 3% jährliche Inflation**
+- Heute: €100.000
+- In 10 Jahren: Kaufkraft reduziert auf €74.409
+- In 20 Jahren: Kaufkraft reduziert auf €55.368
+- In 30 Jahren: Kaufkraft reduziert auf €41.199
+
+**💡 Wichtige Lektion:** Geld untätig auf dem Girokonto lassen = garantierter Verlust der Kaufkraft!
+
+**Warum Investieren essentiell ist:**
+
+1. **Kaufkraft erhalten**: Investitionen müssen mindestens die Inflation erreichen
+2. **Realrendite = Nominalrendite - Inflation**
+   - Wenn Sie 5% verdienen, aber die Inflation 3% beträgt, ist die Realrendite nur 2%
+3. **Aktien und Immobilien**: Haben historisch die Inflation langfristig geschlagen
+4. **Übermäßige Liquidität**: Ist ein Risiko, keine Sicherheit
+
+**Realistisches Ziel:** Streben Sie Renditen an, die die Inflation um mindestens 2-3% übertreffen, für echtes Vermögenswachstum.
+
+---
+
+### 🎓 Empfohlene Bildungsressourcen
+
+#### 📄 Kostenlose praktische Tools
+
+Wir empfehlen diese Bildungstools zur Vertiefung Ihrer Finanzplanung:
+
+**[One Page Financial](https://onepagefinancial-as.streamlit.app/)**
+Visualisieren Sie Ihren kompletten Finanzplan auf einer einzigen Seite. Perfekt für einen sofortigen Überblick über Notfälle, Ziele und Investitionen. Verwenden Sie dieses Tool, um Ihren Fortschritt durch die 3 Phasen zu verfolgen!
+
+**[Immobilienrechner](https://immobiliare-as.streamlit.app/)**
+Planen Sie Ihren Hauskauf: Berechnen Sie Hypotheken, erforderliche Anzahlungen und vergleichen Sie Miete vs. Kauf. Essentiell für eines Ihrer wichtigsten Ziele. Enthält Tilgungssimulationen und Kosten-Nutzen-Analyse.
+
+**[Finance App](https://financeapp-as.streamlit.app/)**
+Fortgeschrittenes Tool für Budgetverwaltung und Ausgabenanalyse. Verfolgen Sie, wohin Ihr Geld fließt und optimieren Sie monatliche Ersparnisse. Ideal zur Optimierung von PHASE 1 und PHASE 2 Ihres Plans.
+
+**[Overview Asset](https://overviewasset-as.streamlit.app/)**
+Analysieren und vergleichen Sie verschiedene Anlageklassen (Aktien, Anleihen, Gold, Immobilien). Verstehen Sie historische Risiken und Renditen für fundierte Entscheidungen. Perfekt für PHASE 3!
+
+**[Portfolio Manager](https://portfolio-as.streamlit.app/)**
+Bauen und überwachen Sie Ihr Anlageportfolio. Simulieren Sie verschiedene Allokationen und verfolgen Sie die Performance im Zeitverlauf. Verwenden Sie dieses Tool zur Umsetzung Ihrer PHASE 3 Allokation.
+
+---
+
+#### 📚 Empfohlene Bücher
+
+**Auf Italienisch:**
+- "L'investitore intelligente" - Benjamin Graham
+- "Un passo avanti a Wall Street" - Burton Malkiel  
+- "I soliti ignoti" - Paolo Coletti
+- "Investimenti. La guida completa" - Banca d'Italia
+- "Padre ricco padre povero" - Robert Kiyosaki
+- "Educazione finanziaria" - Banca d'Italia (kostenlos online)
+
+**Auf Englisch:**
+- "The Intelligent Investor" - Benjamin Graham
+- "A Random Walk Down Wall Street" - Burton Malkiel
+- "The Little Book of Common Sense Investing" - John C. Bogle
+- "The One-Page Financial Plan" - Carl Richards
+- "Rich Dad Poor Dad" - Robert Kiyosaki
+- "Your Money or Your Life" - Vicki Robin & Joe Dominguez
+
+**Auf Deutsch:**
+- "Souverän investieren mit Indexfonds und ETFs" - Gerd Kommer
+- "Der reichste Mann von Babylon" - George S. Clason
+- "Rich Dad Poor Dad" - Robert Kiyosaki (übersetzt)
+
+---
+
+#### 📺 Bildungs-YouTube-Kanäle
+
+Um Ihre Finanzbildung zu vertiefen, hier einige empfohlene YouTube-Kanäle:
+
+**Italienische Kanäle:**
+- **Paolo Coletti** - Persönliche Finanzen und passives Investieren
+- **Mr. RIP** - FIRE (Financial Independence, Retire Early) und Investitionen
+- **Pietro Michelangeli** - Finanzbildung und Sparen
+
+**Englische Kanäle:**
+Suchen Sie nach englischen Personal-Finance-Kanälen mit Fokus auf:
+- Index fund investing
+- Personal finance basics
+- FIRE movement
+- ETF education
+
+**Deutsche Kanäle:**
+Suchen Sie nach deutschen Finanzbildungskanälen mit Fokus auf:
+- ETF-Investitionen
+- Finanzielle Bildung
+- Altersvorsorge
+
+💡 **Tipp:** Überprüfen Sie immer die Qualität der Inhalte und vergleichen Sie verschiedene Quellen. Die besten Bildungskanäle sind diejenigen, die Prinzipien lehren, nicht spezifische Produkte verkaufen.
+
+---
+
+### ⚠️ Was NICHT zu tun ist
+
+❌ **Investieren Sie nicht in:**
+- Produkte, die Sie nicht verstehen
+- Vermögensverwaltung mit Kosten >1%
+- Aktive Fonds mit TER >1% (schlagen selten Indizes)
+- Kryptowährungen als Hauptinvestition
+- Einzelaktien, wenn Sie Anfänger sind
+
+❌ **Vertrauen Sie nicht:**
+- Versprechungen garantierter Renditen >10%/Jahr
+- "Unverpassbare Gelegenheiten" mit Dringlichkeit
+- Finanzprodukten, die von Tür zu Tür verkauft werden
+
+✅ **Vertrauen Sie:**
+- Historischen Daten und Statistiken
+- Niedrigen und transparenten Kosten
+- Diversifikation
+- Zeit und Disziplin
+- **Renditen, die die Inflation langfristig schlagen**
 
 ---
 """
