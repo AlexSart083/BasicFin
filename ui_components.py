@@ -51,6 +51,39 @@ def render_header(lang):
     """)
 
 
+def render_phases_description(lang):
+    """
+    Renderizza la descrizione completa delle 3 fasi (sezione educativa).
+    
+    Args:
+        lang (str): Codice lingua
+    """
+    st.header(t("phases_title", lang))
+    st.markdown(t("phases_intro", lang))
+    
+    st.markdown("---")
+    
+    # FASE 1
+    with st.expander(t("phase1_title", lang), expanded=True):
+        st.markdown(t("phase1_desc", lang))
+    
+    # FASE 2
+    with st.expander(t("phase2_title", lang), expanded=False):
+        st.markdown(t("phase2_desc", lang))
+    
+    # FASE 3
+    with st.expander(t("phase3_title", lang), expanded=False):
+        st.markdown(t("phase3_desc", lang))
+    
+    st.markdown("---")
+    
+    # Perché questo ordine
+    with st.expander(t("why_this_order", lang), expanded=False):
+        st.markdown(t("why_this_order_desc", lang))
+    
+    st.markdown("---")
+
+
 def render_dati_base(lang):
     """
     Renderizza la sezione input per i dati finanziari di base.
@@ -60,7 +93,7 @@ def render_dati_base(lang):
     """
     st.header(t("basic_data", lang))
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
         entrate = st.number_input(
@@ -80,6 +113,8 @@ def render_dati_base(lang):
             help=t("expenses_help", lang)
         )
     
+    col3, col4 = st.columns(2)
+    
     with col3:
         capitale = st.number_input(
             t("current_capital", lang),
@@ -89,43 +124,42 @@ def render_dati_base(lang):
             help=t("capital_help", lang)
         )
     
+    with col4:
+        capitale_investito = st.number_input(
+            t("invested_capital", lang),
+            min_value=0.0,
+            value=0.0,
+            step=500.0,
+            help=t("invested_help", lang)
+        )
+    
     return {
         "entrate": entrate,
         "uscite": uscite,
-        "capitale": capitale
+        "capitale": capitale,
+        "capitale_investito": capitale_investito
     }
 
 
 def render_dati_demografici(lang):
     """
-    Renderizza la sezione input per i dati demografici.
+    Renderizza la sezione input per l'orizzonte temporale.
     
     Returns:
         dict: Dizionario con i dati inseriti
     """
     st.header(t("demographic_data", lang))
     
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        anni_pensione = st.slider(
-            t("years_to_retirement", lang),
-            min_value=1,
-            max_value=50,
-            value=30,
-            help=t("retirement_help", lang)
-        )
-    
-    with col2:
-        fascia_eta = st.selectbox(
-            t("age_group", lang),
-            options=["20-30", "30-40", "40-50", "50-60", "60+"],
-            index=0
-        )
+    anni_pensione = st.slider(
+        t("years_to_retirement", lang),
+        min_value=1,
+        max_value=50,
+        value=30,
+        help=t("retirement_help", lang)
+    )
     
     return {
-        "anni_pensione": anni_pensione,
-        "fascia_eta": fascia_eta
+        "anni_pensione": anni_pensione
     }
 
 
