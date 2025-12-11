@@ -1,6 +1,7 @@
 """
 Report Generator Module - Fase 3 (Investimenti)
 Genera report dettagliati per gli investimenti a lungo termine con risorse educative
+Versione 3.2 - Aggiunta sezione pensioni e esempio inflazione €10.000
 """
 
 from calculations import formatta_valuta, genera_allocazione_investimenti
@@ -40,6 +41,59 @@ def _genera_report_fase3_it(disponibilita_mensile, capitale_investibile_subito, 
 
 Congratulazioni! Hai completato le basi: Fondo di Emergenza e Pianificazione degli Obiettivi. 
 Ora puoi investire per il futuro.
+
+---
+
+## 🎯 PERCHÉ INVESTIRE È ESSENZIALE PER IL TUO FUTURO
+
+### Il Problema delle Pensioni: Una Realtà da Affrontare
+
+**Attenzione**: Questo non è allarmismo, ma una realtà documentata che ogni lavoratore dovrebbe conoscere.
+
+#### 📉 Il Gap Pensionistico
+
+In Italia (e in gran parte d'Europa), il sistema pensionistico pubblico sta affrontando sfide significative:
+
+**Scenario Attuale e Futuro:**
+- **Tasso di sostituzione attuale**: ~70-80% dell'ultimo stipendio (per chi va in pensione oggi)
+- **Tasso di sostituzione futuro stimato**: **40-60%** dell'ultimo stipendio (per chi andrà in pensione tra 20-30 anni)
+- **Età pensionabile**: In costante aumento (già a 67 anni, potrebbe salire ulteriormente)
+
+**Cosa significa concretamente?**
+
+| Se guadagni oggi | Pensione futura stimata (50%) | Gap mensile |
+|------------------|-------------------------------|-------------|
+| €1.500/mese | €750/mese | -€750 |
+| €2.000/mese | €1.000/mese | -€1.000 |
+| €2.500/mese | €1.250/mese | -€1.250 |
+| €3.000/mese | €1.500/mese | -€1.500 |
+
+**💡 Esempio Pratico:**
+Se oggi guadagni €2.000 netti al mese e il tuo stile di vita costa €1.800, in pensione potresti ricevere solo €1.000-1.200. 
+Come colmi il gap di €600-800 al mese? Solo con risparmi e investimenti accumulati durante la vita lavorativa!
+
+#### 🤔 Perché le Pensioni Saranno Più Basse?
+
+1. **Invecchiamento della popolazione**: Meno lavoratori attivi per ogni pensionato
+2. **Sistema contributivo**: Chi inizia a lavorare oggi accumula meno contributi di chi ha iniziato 30 anni fa
+3. **Carriere discontinue**: Contratti precari, periodi di disoccupazione, lavoro part-time riducono i contributi
+4. **Aumento dell'aspettativa di vita**: Le pensioni devono durare più anni
+
+#### 💪 La Soluzione: Costruire una Pensione Integrativa Personale
+
+**Non sei impotente!** Investire regolarmente ti permette di:
+
+1. **Colmare il gap pensionistico** con un capitale accumulato negli anni
+2. **Avere flessibilità** sulla data di pensionamento
+3. **Non dipendere solo dallo Stato** per la tua sicurezza finanziaria
+4. **Lasciare un'eredità** ai tuoi cari
+
+**Esempio di Accumulo (con PAC mensile di €200 per 30 anni):**
+- Versato totale: €72.000
+- Con rendimento medio 5% netto annuo: **~€160.000**
+- Questo capitale può generare €500-600/mese per integrare la pensione!
+
+---
 
 ### Disponibilità per Investimenti
 
@@ -222,7 +276,7 @@ Quando scegli una piattaforma di investimento, valuta:
    - Le crisi sono opportunità (compri a sconto con PAC)
 
 2. **💎 COSTI BASSI = Più Rendimento**
-   - TER 0.20% vs 1.50% = €245,906 di differenza su €100K in 30 anni!
+   - TER 0.20% vs 1.50% = €24.590 di differenza su €10.000 in 30 anni!
    - ⚠️ Calcolo teorico con interesse composto al 7% lordo annuo (non una previsione di mercato)
 
 3. **🧘 DISCIPLINA = PAC Continuo**
@@ -250,60 +304,94 @@ Capitale Finale = Capitale Iniziale × (1 + Rendimento Netto Annuo)^Anni
 Rendimento Netto = Rendimento Lordo - TER
 ```
 
-**Esempio con €100,000 investiti per 30 anni:**
+**Esempio con €10.000 investiti per 30 anni:**
 
 **Scenario 1: ETF a Basso Costo (TER 0.20%)**
 - Rendimento lordo: 7.00% annuo
 - Costi (TER): 0.20% annuo
 - Rendimento netto: 6.80% annuo
-- Capitale finale: €100,000 × (1.068)³⁰ = **€764,645**
+- Capitale finale: €10.000 × (1.068)³⁰ = **€76.465**
 
 **Scenario 2: Fondo Attivo Costoso (TER 1.50%)**
 - Rendimento lordo: 7.00% annuo
 - Costi (TER): 1.50% annuo
 - Rendimento netto: 5.50% annuo
-- Capitale finale: €100,000 × (1.055)³⁰ = **€518,739**
+- Capitale finale: €10.000 × (1.055)³⁰ = **€51.874**
 
-**💰 Differenza: €245,906 persi in costi!**
+**💰 Differenza: €24.591 persi in costi!**
 
 Questo significa che **ogni 1% di costi in più ti costa circa il 32% del tuo capitale finale** su un orizzonte di 30 anni.
 
 **📉 Impatto Percentuale dei Costi:**
-- Con TER 0.20%: Perdi il 3.5% del potenziale rendimento
+- Con TER 0.20%: Mantieni il 96.5% del potenziale rendimento
 - Con TER 1.50%: Perdi il 32.1% del potenziale rendimento
 
-**Conclusione:** I costi hanno un impatto devastante sul lungo termine a causa dell'interesse composto. Anche differenze apparentemente piccole (1% vs 0.2%) si traducono in centinaia di migliaia di euro persi.
+**Conclusione:** I costi hanno un impatto devastante sul lungo termine a causa dell'interesse composto. Anche differenze apparentemente piccole (1% vs 0.2%) si traducono in decine di migliaia di euro persi - soldi che avrebbero potuto integrare la tua pensione!
 
 ---
 
-### 📈 L'Inflazione: Il Nemico Silenzioso
+### 📈 L'Inflazione: Il Nemico Silenzioso (Che Riguarda TUTTI)
+
+**💡 Nota Importante:** L'inflazione NON è un problema solo per chi ha grandi capitali. Anzi, colpisce proporzionalmente di più chi ha piccoli risparmi, perché ogni euro perso conta di più!
 
 **Cos'è l'Inflazione?**
 L'inflazione è l'aumento generalizzato dei prezzi nel tempo, che riduce il potere d'acquisto del denaro.
 
-**🚨 Impatto dell'Inflazione (Esempi Reali):**
+**🚨 Impatto dell'Inflazione su €10.000 (Esempi Reali):**
+
+Immagina di avere €10.000 risparmiati oggi. Ecco cosa succede se li lasci fermi sul conto corrente:
 
 **Scenario A: Inflazione al 2% annuo (target BCE)**
-- Oggi: €100,000 comprano un'auto
-- Tra 10 anni: servono €121,899 per la stessa auto
-- Tra 20 anni: servono €148,595 per la stessa auto
-- Tra 30 anni: servono €181,136 per la stessa auto
 
-**Scenario B: Inflazione al 3% annuo**
-- Oggi: €100,000
-- Tra 10 anni: potere d'acquisto ridotto a €74,409
-- Tra 20 anni: potere d'acquisto ridotto a €55,368
-- Tra 30 anni: potere d'acquisto ridotto a €41,199
+| Anno | Valore Nominale | Potere d'Acquisto Reale | Hai Perso |
+|------|-----------------|-------------------------|-----------|
+| Oggi | €10.000 | €10.000 | €0 |
+| 10 anni | €10.000 | €8.203 | €1.797 |
+| 20 anni | €10.000 | €6.730 | €3.270 |
+| 30 anni | €10.000 | €5.521 | €4.479 |
 
-**💡 Lezione Chiave:** Lasciare i soldi fermi sul conto corrente = perdita garantita di potere d'acquisto!
+**Con inflazione al 2%, in 30 anni i tuoi €10.000 valgono come €5.521 di oggi!**
 
-**Perché Investire è Essenziale:**
+**Scenario B: Inflazione al 3% annuo (più realistica storicamente)**
+
+| Anno | Valore Nominale | Potere d'Acquisto Reale | Hai Perso |
+|------|-----------------|-------------------------|-----------|
+| Oggi | €10.000 | €10.000 | €0 |
+| 10 anni | €10.000 | €7.441 | €2.559 |
+| 20 anni | €10.000 | €5.537 | €4.463 |
+| 30 anni | €10.000 | €4.120 | €5.880 |
+
+**Con inflazione al 3%, in 30 anni i tuoi €10.000 valgono come €4.120 di oggi!**
+
+#### 🛒 Esempio Pratico: La Spesa al Supermercato
+
+Se oggi con €10.000 fai la spesa per 10 mesi (€1.000/mese), tra 30 anni con inflazione al 3% quei soldi basteranno solo per **4 mesi di spesa**!
+
+#### 💡 Lezioni Chiave per TUTTI:
+
+1. **Lasciare i soldi fermi sul conto corrente = perdita CERTA**
+   - Il tuo conto paga 0% (o quasi)
+   - L'inflazione "mangia" il 2-3% all'anno
+   - Stai perdendo soldi ogni giorno, anche se il saldo non cambia!
+
+2. **Non serve essere ricchi per investire**
+   - Con €50-100 al mese puoi iniziare un PAC
+   - I piccoli importi diventano grandi con il tempo
+   - €100/mese per 30 anni = €36.000 versati → €~80.000 con rendimento medio
+
+3. **Il tempo è il tuo migliore alleato**
+   - Prima inizi, più l'interesse composto lavora per te
+   - Anche piccole somme fanno la differenza se hai 20-30 anni davanti
+
+**Perché Investire è Essenziale per TUTTI:**
 
 1. **Preservare il Potere d'Acquisto**: Gli investimenti devono almeno eguagliare l'inflazione
 2. **Rendimento Reale = Rendimento Nominale - Inflazione**
    - Se guadagni 5% ma l'inflazione è 3%, il rendimento reale è solo 2%
-3. **Azioni e Immobili**: Storicamente hanno battuto l'inflazione nel lungo termine
-4. **Liquidità Eccessiva**: È un rischio, non una sicurezza
+   - Ma è comunque meglio del -3% che "guadagni" lasciando i soldi fermi!
+3. **Non è questione di ricchezza, è questione di consapevolezza**
+   - Chi ha €10.000 ha BISOGNO di proteggerli dall'inflazione
+   - Chi ha €100.000 ha lo stesso bisogno, solo su scala diversa
 
 **Target Realistico:** Puntare a rendimenti che superino l'inflazione di almeno 2-3% per una crescita reale del patrimonio.
 
@@ -420,6 +508,59 @@ def _genera_report_fase3_en(disponibilita_mensile, capitale_investibile_subito, 
 
 Congratulations! You've completed the basics: Emergency Fund and Goal Planning. 
 Now you can invest for the future.
+
+---
+
+## 🎯 WHY INVESTING IS ESSENTIAL FOR YOUR FUTURE
+
+### The Pension Problem: A Reality to Face
+
+**Attention**: This is not alarmism, but a documented reality that every worker should know.
+
+#### 📉 The Pension Gap
+
+In Europe (and many developed countries), the public pension system faces significant challenges:
+
+**Current and Future Scenario:**
+- **Current replacement rate**: ~70-80% of last salary (for those retiring today)
+- **Estimated future replacement rate**: **40-60%** of last salary (for those retiring in 20-30 years)
+- **Retirement age**: Constantly increasing (already at 67, may rise further)
+
+**What does this mean concretely?**
+
+| If you earn today | Estimated future pension (50%) | Monthly gap |
+|-------------------|--------------------------------|-------------|
+| €1,500/month | €750/month | -€750 |
+| €2,000/month | €1,000/month | -€1,000 |
+| €2,500/month | €1,250/month | -€1,250 |
+| €3,000/month | €1,500/month | -€1,500 |
+
+**💡 Practical Example:**
+If today you earn €2,000 net per month and your lifestyle costs €1,800, in retirement you might receive only €1,000-1,200. 
+How do you fill the gap of €600-800 per month? Only with savings and investments accumulated during your working life!
+
+#### 🤔 Why Will Pensions Be Lower?
+
+1. **Aging population**: Fewer active workers per retiree
+2. **Contributory system**: Those starting work today accumulate fewer contributions than those who started 30 years ago
+3. **Discontinuous careers**: Precarious contracts, unemployment periods, part-time work reduce contributions
+4. **Increased life expectancy**: Pensions must last more years
+
+#### 💪 The Solution: Build a Personal Supplementary Pension
+
+**You're not powerless!** Regular investing allows you to:
+
+1. **Bridge the pension gap** with capital accumulated over the years
+2. **Have flexibility** on retirement date
+3. **Not depend solely on the State** for your financial security
+4. **Leave an inheritance** to your loved ones
+
+**Accumulation Example (with €200 monthly PAC for 30 years):**
+- Total invested: €72,000
+- With average 5% net annual return: **~€160,000**
+- This capital can generate €500-600/month to supplement your pension!
+
+---
 
 ### Investment Availability
 
@@ -603,7 +744,7 @@ When choosing an investment platform, evaluate:
    - Crises are opportunities (buy at discount with PAC)
 
 2. **💎 LOW COSTS = More Returns**
-   - TER 0.20% vs 1.50% = €245,906 difference on €100K over 30 years!
+   - TER 0.20% vs 1.50% = €24,590 difference on €10,000 over 30 years!
    - ⚠️ Theoretical calculation with 7% gross annual compound interest (not a market forecast)
 
 3. **🧘 DISCIPLINE = Continuous PAC**
@@ -631,60 +772,94 @@ Final Capital = Initial Capital × (1 + Net Annual Return)^Years
 Net Return = Gross Return - TER
 ```
 
-**Example with €100,000 invested for 30 years:**
+**Example with €10,000 invested for 30 years:**
 
 **Scenario 1: Low-Cost ETF (TER 0.20%)**
 - Gross return: 7.00% per year
 - Costs (TER): 0.20% per year
 - Net return: 6.80% per year
-- Final capital: €100,000 × (1.068)³⁰ = **€764,645**
+- Final capital: €10,000 × (1.068)³⁰ = **€76,465**
 
 **Scenario 2: Expensive Active Fund (TER 1.50%)**
 - Gross return: 7.00% per year
 - Costs (TER): 1.50% per year
 - Net return: 5.50% per year
-- Final capital: €100,000 × (1.055)³⁰ = **€518,739**
+- Final capital: €10,000 × (1.055)³⁰ = **€51,874**
 
-**💰 Difference: €245,906 lost to costs!**
+**💰 Difference: €24,591 lost to costs!**
 
 This means that **every 1% extra in costs costs you approximately 32% of your final capital** over a 30-year horizon.
 
 **📉 Percentage Impact of Costs:**
-- With TER 0.20%: You lose 3.5% of potential returns
+- With TER 0.20%: You keep 96.5% of potential returns
 - With TER 1.50%: You lose 32.1% of potential returns
 
-**Conclusion:** Costs have a devastating long-term impact due to compound interest. Even seemingly small differences (1% vs 0.2%) translate into hundreds of thousands of euros lost.
+**Conclusion:** Costs have a devastating long-term impact due to compound interest. Even seemingly small differences (1% vs 0.2%) translate into tens of thousands of euros lost - money that could have supplemented your pension!
 
 ---
 
-### 📈 Inflation: The Silent Enemy
+### 📈 Inflation: The Silent Enemy (That Affects EVERYONE)
+
+**💡 Important Note:** Inflation is NOT just a problem for those with large capitals. In fact, it proportionally affects those with small savings more, because every euro lost counts more!
 
 **What is Inflation?**
 Inflation is the general increase in prices over time, which reduces the purchasing power of money.
 
-**🚨 Impact of Inflation (Real Examples):**
+**🚨 Impact of Inflation on €10,000 (Real Examples):**
+
+Imagine having €10,000 saved today. Here's what happens if you leave them idle in your checking account:
 
 **Scenario A: 2% annual inflation (ECB target)**
-- Today: €100,000 buys a car
-- In 10 years: need €121,899 for the same car
-- In 20 years: need €148,595 for the same car
-- In 30 years: need €181,136 for the same car
 
-**Scenario B: 3% annual inflation**
-- Today: €100,000
-- In 10 years: purchasing power reduced to €74,409
-- In 20 years: purchasing power reduced to €55,368
-- In 30 years: purchasing power reduced to €41,199
+| Year | Nominal Value | Real Purchasing Power | You've Lost |
+|------|---------------|----------------------|-------------|
+| Today | €10,000 | €10,000 | €0 |
+| 10 years | €10,000 | €8,203 | €1,797 |
+| 20 years | €10,000 | €6,730 | €3,270 |
+| 30 years | €10,000 | €5,521 | €4,479 |
 
-**💡 Key Lesson:** Leaving money idle in checking account = guaranteed loss of purchasing power!
+**With 2% inflation, in 30 years your €10,000 are worth like €5,521 today!**
 
-**Why Investing is Essential:**
+**Scenario B: 3% annual inflation (more historically realistic)**
+
+| Year | Nominal Value | Real Purchasing Power | You've Lost |
+|------|---------------|----------------------|-------------|
+| Today | €10,000 | €10,000 | €0 |
+| 10 years | €10,000 | €7,441 | €2,559 |
+| 20 years | €10,000 | €5,537 | €4,463 |
+| 30 years | €10,000 | €4,120 | €5,880 |
+
+**With 3% inflation, in 30 years your €10,000 are worth like €4,120 today!**
+
+#### 🛒 Practical Example: Grocery Shopping
+
+If today with €10,000 you do grocery shopping for 10 months (€1,000/month), in 30 years with 3% inflation that money will only be enough for **4 months of groceries**!
+
+#### 💡 Key Lessons for EVERYONE:
+
+1. **Leaving money idle in checking account = CERTAIN loss**
+   - Your account pays 0% (or almost)
+   - Inflation "eats" 2-3% per year
+   - You're losing money every day, even if the balance doesn't change!
+
+2. **You don't need to be rich to invest**
+   - With €50-100 per month you can start a PAC
+   - Small amounts become large with time
+   - €100/month for 30 years = €36,000 invested → €~80,000 with average return
+
+3. **Time is your best ally**
+   - The earlier you start, the more compound interest works for you
+   - Even small amounts make a difference if you have 20-30 years ahead
+
+**Why Investing is Essential for EVERYONE:**
 
 1. **Preserve Purchasing Power**: Investments must at least match inflation
 2. **Real Return = Nominal Return - Inflation**
    - If you earn 5% but inflation is 3%, real return is only 2%
-3. **Stocks and Real Estate**: Historically have beaten inflation in the long term
-4. **Excessive Liquidity**: Is a risk, not security
+   - But it's still better than the -3% you "earn" leaving money idle!
+3. **It's not about wealth, it's about awareness**
+   - Those with €10,000 NEED to protect them from inflation
+   - Those with €100,000 have the same need, just on a different scale
 
 **Realistic Target:** Aim for returns that exceed inflation by at least 2-3% for real wealth growth.
 
@@ -801,6 +976,59 @@ def _genera_report_fase3_de(disponibilita_mensile, capitale_investibile_subito, 
 
 Herzlichen Glückwunsch! Sie haben die Grundlagen abgeschlossen: Notgroschen und Zielplanung. 
 Jetzt können Sie für die Zukunft investieren.
+
+---
+
+## 🎯 WARUM INVESTIEREN FÜR IHRE ZUKUNFT ESSENTIELL IST
+
+### Das Rentenproblem: Eine Realität, der man sich stellen muss
+
+**Achtung**: Dies ist kein Alarmismus, sondern eine dokumentierte Realität, die jeder Arbeitnehmer kennen sollte.
+
+#### 📉 Die Rentenlücke
+
+In Europa steht das öffentliche Rentensystem vor erheblichen Herausforderungen:
+
+**Aktuelles und zukünftiges Szenario:**
+- **Aktuelle Ersatzquote**: ~70-80% des letzten Gehalts (für heute in Rente Gehende)
+- **Geschätzte zukünftige Ersatzquote**: **40-60%** des letzten Gehalts (für in 20-30 Jahren in Rente Gehende)
+- **Rentenalter**: Steigt ständig (bereits bei 67, könnte weiter steigen)
+
+**Was bedeutet das konkret?**
+
+| Wenn Sie heute verdienen | Geschätzte zukünftige Rente (50%) | Monatliche Lücke |
+|--------------------------|-----------------------------------|------------------|
+| €1.500/Monat | €750/Monat | -€750 |
+| €2.000/Monat | €1.000/Monat | -€1.000 |
+| €2.500/Monat | €1.250/Monat | -€1.250 |
+| €3.000/Monat | €1.500/Monat | -€1.500 |
+
+**💡 Praktisches Beispiel:**
+Wenn Sie heute €2.000 netto pro Monat verdienen und Ihr Lebensstil €1.800 kostet, könnten Sie im Ruhestand nur €1.000-1.200 erhalten. 
+Wie schließen Sie die Lücke von €600-800 pro Monat? Nur mit Ersparnissen und Investitionen, die während des Arbeitslebens angesammelt wurden!
+
+#### 🤔 Warum werden die Renten niedriger sein?
+
+1. **Alternde Bevölkerung**: Weniger aktive Arbeitnehmer pro Rentner
+2. **Beitragssystem**: Wer heute anfängt zu arbeiten, sammelt weniger Beiträge als vor 30 Jahren
+3. **Unterbrochene Karrieren**: Prekäre Verträge, Arbeitslosigkeitsperioden, Teilzeitarbeit reduzieren die Beiträge
+4. **Steigende Lebenserwartung**: Renten müssen mehr Jahre dauern
+
+#### 💪 Die Lösung: Eine persönliche Zusatzrente aufbauen
+
+**Sie sind nicht machtlos!** Regelmäßiges Investieren ermöglicht Ihnen:
+
+1. **Die Rentenlücke zu schließen** mit über die Jahre angesammeltem Kapital
+2. **Flexibilität** beim Renteneintrittsdatum zu haben
+3. **Nicht nur vom Staat abhängig** für Ihre finanzielle Sicherheit zu sein
+4. **Ein Erbe zu hinterlassen** für Ihre Lieben
+
+**Beispiel Ansparen (mit €200 monatlichem PAC für 30 Jahre):**
+- Insgesamt eingezahlt: €72.000
+- Mit durchschnittlich 5% Nettorendite pro Jahr: **~€160.000**
+- Dieses Kapital kann €500-600/Monat generieren, um die Rente zu ergänzen!
+
+---
 
 ### Investitionsverfügbarkeit
 
@@ -961,7 +1189,7 @@ Bei der Auswahl einer Investitionsplattform bewerten Sie:
 **2. Wählen Sie Instrumente:**
 - Verwenden Sie ETF-Screener, um die besten Produkte zu finden
 - Vergleichen Sie mindestens 3 ETFs pro Kategorie
-- Überprüfen Sie die Steuerdomizilin (Irland/Luxemburg sind optimal für EU)
+- Überprüfen Sie die Steuerdomizil (Irland/Luxemburg sind optimal für EU)
 
 **3. Eröffnen Sie ein Konto:**
 - Vergleichen Sie Broker
@@ -984,7 +1212,7 @@ Bei der Auswahl einer Investitionsplattform bewerten Sie:
    - Krisen sind Gelegenheiten (kaufen Sie mit Rabatt durch PAC)
 
 2. **💎 NIEDRIGE KOSTEN = Mehr Rendite**
-   - TER 0,20% vs. 1,50% = €245.906 Unterschied auf €100K über 30 Jahre!
+   - TER 0,20% vs. 1,50% = €24.590 Unterschied auf €10.000 über 30 Jahre!
    - ⚠️ Theoretische Berechnung mit 7% Brutto-Jahreszins (keine Marktprognose)
 
 3. **🧘 DISZIPLIN = Kontinuierlicher PAC**
@@ -1012,60 +1240,94 @@ Endkapital = Anfangskapital × (1 + Netto-Jahresrendite)^Jahre
 Nettorendite = Bruttorendite - TER
 ```
 
-**Beispiel mit €100.000 investiert für 30 Jahre:**
+**Beispiel mit €10.000 investiert für 30 Jahre:**
 
 **Szenario 1: Kostengünstiger ETF (TER 0,20%)**
 - Bruttorendite: 7,00% pro Jahr
 - Kosten (TER): 0,20% pro Jahr
 - Nettorendite: 6,80% pro Jahr
-- Endkapital: €100.000 × (1,068)³⁰ = **€764.645**
+- Endkapital: €10.000 × (1,068)³⁰ = **€76.465**
 
 **Szenario 2: Teurer aktiver Fonds (TER 1,50%)**
 - Bruttorendite: 7,00% pro Jahr
 - Kosten (TER): 1,50% pro Jahr
 - Nettorendite: 5,50% pro Jahr
-- Endkapital: €100.000 × (1,055)³⁰ = **€518.739**
+- Endkapital: €10.000 × (1,055)³⁰ = **€51.874**
 
-**💰 Unterschied: €245.906 durch Kosten verloren!**
+**💰 Unterschied: €24.591 durch Kosten verloren!**
 
 Das bedeutet, dass **jedes zusätzliche 1% an Kosten Sie etwa 32% Ihres Endkapitals kostet** über einen 30-Jahres-Horizont.
 
 **📉 Prozentuale Auswirkung der Kosten:**
-- Mit TER 0,20%: Sie verlieren 3,5% der potenziellen Rendite
+- Mit TER 0,20%: Sie behalten 96,5% der potenziellen Rendite
 - Mit TER 1,50%: Sie verlieren 32,1% der potenziellen Rendite
 
-**Fazit:** Kosten haben aufgrund des Zinseszinses eine verheerende langfristige Auswirkung. Selbst scheinbar kleine Unterschiede (1% vs. 0,2%) führen zu Hunderttausenden von Euro an Verlusten.
+**Fazit:** Kosten haben aufgrund des Zinseszinses eine verheerende langfristige Auswirkung. Selbst scheinbar kleine Unterschiede (1% vs. 0,2%) führen zu Zehntausenden von Euro an Verlusten - Geld, das Ihre Rente hätte ergänzen können!
 
 ---
 
-### 📈 Inflation: Der stille Feind
+### 📈 Inflation: Der stille Feind (der ALLE betrifft)
+
+**💡 Wichtiger Hinweis:** Inflation ist NICHT nur ein Problem für diejenigen mit großen Kapitalien. Tatsächlich betrifft sie proportional mehr diejenigen mit kleinen Ersparnissen, weil jeder verlorene Euro mehr zählt!
 
 **Was ist Inflation?**
 Inflation ist der allgemeine Preisanstieg im Laufe der Zeit, der die Kaufkraft des Geldes verringert.
 
-**🚨 Auswirkung der Inflation (Reale Beispiele):**
+**🚨 Auswirkung der Inflation auf €10.000 (Reale Beispiele):**
+
+Stellen Sie sich vor, Sie haben heute €10.000 gespart. Hier ist, was passiert, wenn Sie sie ungenutzt auf dem Girokonto lassen:
 
 **Szenario A: 2% jährliche Inflation (EZB-Ziel)**
-- Heute: €100.000 kaufen ein Auto
-- In 10 Jahren: benötigen €121.899 für dasselbe Auto
-- In 20 Jahren: benötigen €148.595 für dasselbe Auto
-- In 30 Jahren: benötigen €181.136 für dasselbe Auto
 
-**Szenario B: 3% jährliche Inflation**
-- Heute: €100.000
-- In 10 Jahren: Kaufkraft reduziert auf €74.409
-- In 20 Jahren: Kaufkraft reduziert auf €55.368
-- In 30 Jahren: Kaufkraft reduziert auf €41.199
+| Jahr | Nominalwert | Reale Kaufkraft | Sie haben verloren |
+|------|-------------|-----------------|-------------------|
+| Heute | €10.000 | €10.000 | €0 |
+| 10 Jahre | €10.000 | €8.203 | €1.797 |
+| 20 Jahre | €10.000 | €6.730 | €3.270 |
+| 30 Jahre | €10.000 | €5.521 | €4.479 |
 
-**💡 Wichtige Lektion:** Geld untätig auf dem Girokonto lassen = garantierter Verlust der Kaufkraft!
+**Mit 2% Inflation sind Ihre €10.000 in 30 Jahren wie €5.521 heute wert!**
 
-**Warum Investieren essentiell ist:**
+**Szenario B: 3% jährliche Inflation (historisch realistischer)**
+
+| Jahr | Nominalwert | Reale Kaufkraft | Sie haben verloren |
+|------|-------------|-----------------|-------------------|
+| Heute | €10.000 | €10.000 | €0 |
+| 10 Jahre | €10.000 | €7.441 | €2.559 |
+| 20 Jahre | €10.000 | €5.537 | €4.463 |
+| 30 Jahre | €10.000 | €4.120 | €5.880 |
+
+**Mit 3% Inflation sind Ihre €10.000 in 30 Jahren wie €4.120 heute wert!**
+
+#### 🛒 Praktisches Beispiel: Der Supermarkteinkauf
+
+Wenn Sie heute mit €10.000 für 10 Monate einkaufen (€1.000/Monat), reicht dieses Geld in 30 Jahren mit 3% Inflation nur noch für **4 Monate Einkäufe**!
+
+#### 💡 Wichtige Lektionen für ALLE:
+
+1. **Geld ungenutzt auf dem Girokonto lassen = SICHERER Verlust**
+   - Ihr Konto zahlt 0% (oder fast)
+   - Die Inflation "frisst" 2-3% pro Jahr
+   - Sie verlieren jeden Tag Geld, auch wenn sich der Kontostand nicht ändert!
+
+2. **Man muss nicht reich sein, um zu investieren**
+   - Mit €50-100 pro Monat können Sie einen PAC starten
+   - Kleine Beträge werden mit der Zeit groß
+   - €100/Monat für 30 Jahre = €36.000 eingezahlt → €~80.000 mit durchschnittlicher Rendite
+
+3. **Zeit ist Ihr bester Verbündeter**
+   - Je früher Sie anfangen, desto mehr arbeitet der Zinseszins für Sie
+   - Selbst kleine Beträge machen einen Unterschied, wenn Sie 20-30 Jahre vor sich haben
+
+**Warum Investieren für ALLE essentiell ist:**
 
 1. **Kaufkraft erhalten**: Investitionen müssen mindestens die Inflation erreichen
 2. **Realrendite = Nominalrendite - Inflation**
    - Wenn Sie 5% verdienen, aber die Inflation 3% beträgt, ist die Realrendite nur 2%
-3. **Aktien und Immobilien**: Haben historisch die Inflation langfristig geschlagen
-4. **Übermäßige Liquidität**: Ist ein Risiko, keine Sicherheit
+   - Aber es ist immer noch besser als die -3%, die Sie "verdienen", wenn Sie Geld ungenutzt lassen!
+3. **Es geht nicht um Reichtum, es geht um Bewusstsein**
+   - Wer €10.000 hat, MUSS sie vor der Inflation schützen
+   - Wer €100.000 hat, hat das gleiche Bedürfnis, nur in anderem Maßstab
 
 **Realistisches Ziel:** Streben Sie Renditen an, die die Inflation um mindestens 2-3% übertreffen, für echtes Vermögenswachstum.
 
