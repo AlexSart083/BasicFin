@@ -49,8 +49,7 @@ e **non costituisce consulenza finanziaria personalizzata**.
 - ✅ **Studia autonomamente** su risorse educative indipendenti
 - ✅ Confronta sempre costi e performance
 - ✅ Consulta un consulente indipendente per decisioni importanti
-- ✅ Investi solo dopo aver completato il fondo di emergenza
-- ✅ Investi con un orizzonte temporale di almeno 5-10 anni
+- ✅ Valuta sempre i rischi prima di investire
 
 ### Privacy e Dati
 
@@ -60,17 +59,13 @@ di browser e vengono eliminate quando chiudi l'app. Non abbiamo accesso ai tuoi 
 ### Responsabilità
 
 Tu sei l'unico responsabile delle tue decisioni di investimento. Gli investimenti comportano rischi, 
-inclusa la possibilità di perdite, specialmente nel breve termine.
+inclusa la perdita totale del capitale investito.
 
 ---
 
 💙 **Ti auguriamo un futuro finanziario sereno e prospero!**
 
 📚 **Ricorda**: L'educazione finanziaria è il miglior investimento che puoi fare!
-
----
-
-*© 2025 - Educational Tool*
 """
 
 
@@ -100,8 +95,7 @@ and **does not constitute personalized financial advice**.
 - ✅ **Study independently** on independent educational resources
 - ✅ Always compare costs and performance
 - ✅ Consult an independent advisor for important decisions
-- ✅ Invest only after completing your emergency fund
-- ✅ Invest with a time horizon of at least 5-10 years
+- ✅ Always assess risks before investing
 
 ### Privacy and Data
 
@@ -111,17 +105,13 @@ and is deleted when you close the app. We have no access to your data.
 ### Responsibility
 
 You are solely responsible for your investment decisions. Investments involve risks, 
-including the possibility of losses, especially in the short term.
+including total loss of invested capital.
 
 ---
 
 💙 **We wish you a serene and prosperous financial future!**
 
 📚 **Remember**: Financial education is the best investment you can make!
-
----
-
-*© 2025 - Educational Tool*
 """
 
 
@@ -151,8 +141,7 @@ und **stellt keine personalisierte Finanzberatung dar**.
 - ✅ **Studieren Sie eigenständig** auf unabhängigen Bildungsressourcen
 - ✅ Vergleichen Sie immer Kosten und Performance
 - ✅ Konsultieren Sie einen unabhängigen Berater für wichtige Entscheidungen
-- ✅ Investieren Sie nur nach Vervollständigung Ihres Notgroschens
-- ✅ Investieren Sie mit einem Zeithorizont von mindestens 5-10 Jahren
+- ✅ Bewerten Sie immer die Risiken vor der Investition
 
 ### Datenschutz und Daten
 
@@ -162,15 +151,11 @@ und werden gelöscht, wenn Sie die App schließen. Wir haben keinen Zugriff auf 
 ### Verantwortung
 
 Sie sind allein verantwortlich für Ihre Investitionsentscheidungen. Investitionen beinhalten Risiken, 
-einschließlich der Möglichkeit von Verlusten, besonders kurzfristig.
+einschließlich des Totalverlusts des investierten Kapitals.
 
 ---
 
 💙 **Wir wünschen Ihnen eine ruhige und prosperierende finanzielle Zukunft!**
 
 📚 **Denken Sie daran**: Finanzbildung ist die beste Investition, die Sie tätigen können!
-
----
-
-*© 2025 - Educational Tool*
 """
