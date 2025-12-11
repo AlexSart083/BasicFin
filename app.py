@@ -1,9 +1,9 @@
 """
-Guida Finanziaria per Neofiti - Streamlit App v3.1.1
+Guida Finanziaria per Nuovi investitori - Streamlit App v3.1
 App educativa multilingue per la pianificazione finanziaria a tre fasi
 
-Versione: 3.1.1 - Modular & Multilingual
-Anno: 2025
+Autore: Miaono Klaus
+Versione: 3.1 - Improved UX with Theory First
 """
 
 import streamlit as st
@@ -20,6 +20,7 @@ from calculations import (
 from ui_components import (
     render_language_selector,
     render_header,
+    render_phases_description,
     render_dati_base,
     render_dati_demografici,
     render_gestione_obiettivi,
@@ -50,31 +51,59 @@ def main():
         lang = render_language_selector()
         st.markdown("---")
         st.markdown(f"### {t('version_info', lang)}")
-        st.markdown("v3.1.1 - Multilingual")
+        st.markdown("v3.1 - Theory First UX")
         st.markdown("🇮🇹 🇬🇧 🇩🇪")
         st.markdown("---")
-        st.markdown("**© 2025**")
+        st.markdown("**© 2024 Antonino Sortino**")
         st.markdown("Educational Tool")
     
+    # =================================================================
+    # PARTE 1: HEADER E DESCRIZIONE DELLE FASI (TEORIA)
+    # =================================================================
     render_header(lang)
     
-    # Raccolta Input
+    # Descrizione completa delle 3 fasi (sezione educativa)
+    render_phases_description(lang)
+    
+    st.markdown("---")
+    st.markdown("---")
+    
+    # =================================================================
+    # PARTE 2: RACCOLTA INPUT UTENTE
+    # =================================================================
+    st.header(t("input_data_title", lang))
+    st.markdown(t("input_data_intro", lang))
+    st.markdown("---")
+    
+    # Dati finanziari base
     dati_base = render_dati_base(lang)
     st.markdown("---")
     
+    # Orizzonte temporale
     dati_demografici = render_dati_demografici(lang)
     st.markdown("---")
     
+    # Obiettivi futuri
     obiettivi = render_gestione_obiettivi(lang)
     st.markdown("---")
     
+    # Profilo di rischio
     profilo_rischio = render_profilo_rischio(lang)
     st.markdown("---")
     
-    # Bottone Genera Report
+    # =================================================================
+    # PARTE 3: BOTTONE GENERA REPORT E CALCOLI
+    # =================================================================
     if st.button(t("generate_report", lang), type="primary", use_container_width=True):
         st.markdown("---")
         st.header(t("personalized_guide", lang))
+        
+        # Mostra riepilogo capitale investito (se presente)
+        if dati_base['capitale_investito'] > 0:
+            st.info(f"""
+            ℹ️ **Nota**: Hai già {dati_base['capitale_investito']:,.2f}€ investiti. 
+            Questo importo non influisce sui calcoli delle 3 fasi, ma è utile per la tua panoramica finanziaria completa.
+            """)
         
         # Calcoli preliminari
         risparmio_mensile = dati_base['entrate'] - dati_base['uscite']
