@@ -111,26 +111,6 @@ Prima di procedere con qualsiasi altro obiettivo finanziario, devi completare il
 
 Il Fondo di Emergenza non è un "extra", è un **must**. Senza di esso, qualsiasi imprevisto 
 potrebbe costringerti a indebitarti o vendere investimenti in perdita.
-
----
-
-### 📊 Considerazione sull'Inflazione
-
-**Perché il Fondo di Emergenza deve essere in liquidità?**
-
-Anche se l'**inflazione erode il potere d'acquisto** della liquidità nel tempo, il Fondo di Emergenza 
-DEVE rimanere **immediatamente disponibile** e **senza rischi**:
-
-- ✅ **Accesso immediato**: In caso di emergenza, non puoi aspettare vendite di investimenti
-- ✅ **Zero rischio di perdite**: Gli investimenti possono essere in perdita proprio quando ne hai bisogno
-- ⚠️ **Inflazione**: Sì, la liquidità perde valore (circa 2-3% all'anno), ma è il prezzo della sicurezza
-
-**💡 La soluzione all'inflazione**:
-1. **Completa il Fondo di Emergenza** (FASE 1) - Liquidità
-2. **Pianifica gli obiettivi** (FASE 2) - PAC protetti
-3. **Investi il resto** (FASE 3) - Qui batti l'inflazione!
-
-Solo DOPO aver completato il Fondo di Emergenza puoi investire per battere l'inflazione nel lungo termine.
 """
     else:
         report += f"""
@@ -145,20 +125,6 @@ Ora puoi procedere con le fasi successive.
 La tua eccedenza di capitale verrà allocata secondo questa filosofia:
 1. Prima priorità: Coprire eventuali gap negli obiettivi futuri
 2. Seconda priorità: **Investire subito** il resto per farlo crescere
-
----
-
-### 📊 Protezione dall'Inflazione
-
-Ora che hai completato il Fondo di Emergenza, puoi concentrarti su **battere l'inflazione** 
-con gli investimenti:
-
-- ✅ Il tuo "cuscinetto di sicurezza" è al sicuro in liquidità
-- 📈 Il capitale eccedente può essere investito per **crescere oltre l'inflazione**
-- 💰 Obiettivo: rendimenti reali positivi (rendimento - inflazione > 0)
-
-Nelle fasi successive imparerai come costruire un portafoglio che preservi e aumenti 
-il tuo potere d'acquisto nel tempo!
 
 ---
 """
@@ -229,26 +195,6 @@ Before proceeding with any other financial goal, you must complete your Emergenc
 
 The Emergency Fund is not an "extra", it's a **must**. Without it, any unexpected event 
 could force you to go into debt or sell investments at a loss.
-
----
-
-### 📊 Inflation Consideration
-
-**Why must the Emergency Fund be in cash?**
-
-Even though **inflation erodes the purchasing power** of cash over time, the Emergency Fund 
-MUST remain **immediately available** and **risk-free**:
-
-- ✅ **Immediate access**: In an emergency, you can't wait for investment sales
-- ✅ **Zero risk of losses**: Investments can be down exactly when you need them
-- ⚠️ **Inflation**: Yes, cash loses value (about 2-3% per year), but it's the price of security
-
-**💡 The inflation solution**:
-1. **Complete the Emergency Fund** (PHASE 1) - Liquidity
-2. **Plan your goals** (PHASE 2) - Protected PACs
-3. **Invest the rest** (PHASE 3) - Here you beat inflation!
-
-Only AFTER completing the Emergency Fund can you invest to beat inflation in the long term.
 """
     else:
         report += f"""
@@ -263,20 +209,6 @@ Now you can proceed with subsequent phases.
 Your surplus capital will be allocated according to this philosophy:
 1. First priority: Cover any gaps in future goals
 2. Second priority: **Invest immediately** the rest to make it grow
-
----
-
-### 📊 Protection Against Inflation
-
-Now that you've completed the Emergency Fund, you can focus on **beating inflation** 
-with investments:
-
-- ✅ Your "safety cushion" is secure in cash
-- 📈 Surplus capital can be invested to **grow beyond inflation**
-- 💰 Goal: positive real returns (return - inflation > 0)
-
-In subsequent phases you'll learn how to build a portfolio that preserves and increases 
-your purchasing power over time!
 
 ---
 """
@@ -347,26 +279,6 @@ Bevor Sie mit anderen finanziellen Zielen fortfahren, müssen Sie Ihren Notgrosc
 
 Der Notgroschen ist kein "Extra", sondern ein **Muss**. Ohne ihn könnte Sie jedes unerwartete Ereignis 
 zwingen, sich zu verschulden oder Investitionen mit Verlust zu verkaufen.
-
----
-
-### 📊 Inflationsüberlegung
-
-**Warum muss der Notgroschen in Bargeld sein?**
-
-Auch wenn die **Inflation die Kaufkraft** von Bargeld im Laufe der Zeit erodiert, MUSS der Notgroschen 
-**sofort verfügbar** und **risikofrei** bleiben:
-
-- ✅ **Sofortiger Zugang**: Im Notfall können Sie nicht auf Investitionsverkäufe warten
-- ✅ **Null Verlustrisiko**: Investitionen können genau dann im Minus sein, wenn Sie sie brauchen
-- ⚠️ **Inflation**: Ja, Bargeld verliert an Wert (etwa 2-3% pro Jahr), aber das ist der Preis der Sicherheit
-
-**💡 Die Inflationslösung**:
-1. **Notgroschen vervollständigen** (PHASE 1) - Liquidität
-2. **Ziele planen** (PHASE 2) - Geschützte PACs
-3. **Den Rest investieren** (PHASE 3) - Hier schlagen Sie die Inflation!
-
-Erst NACH Vervollständigung des Notgroschens können Sie investieren, um die Inflation langfristig zu schlagen.
 """
     else:
         report += f"""
@@ -381,20 +293,6 @@ Jetzt können Sie mit den nachfolgenden Phasen fortfahren.
 Ihr Überschusskapital wird nach dieser Philosophie zugewiesen:
 1. Erste Priorität: Deckung eventueller Lücken bei zukünftigen Zielen
 2. Zweite Priorität: **Sofort investieren** den Rest, um ihn wachsen zu lassen
-
----
-
-### 📊 Schutz vor Inflation
-
-Jetzt, da Sie den Notgroschen vervollständigt haben, können Sie sich darauf konzentrieren, **die Inflation zu schlagen** 
-mit Investitionen:
-
-- ✅ Ihr "Sicherheitspolster" ist sicher in Bargeld
-- 📈 Überschusskapital kann investiert werden, um **über die Inflation hinaus zu wachsen**
-- 💰 Ziel: positive Realrenditen (Rendite - Inflation > 0)
-
-In den folgenden Phasen lernen Sie, wie Sie ein Portfolio aufbauen, das Ihre Kaufkraft 
-im Laufe der Zeit bewahrt und erhöht!
 
 ---
 """
