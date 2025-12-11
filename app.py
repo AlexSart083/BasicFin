@@ -54,7 +54,7 @@ def main():
         st.markdown("v3.1 - Theory First UX")
         st.markdown("🇮🇹 🇬🇧 🇩🇪")
         st.markdown("---")
-        st.markdown("**© 2024 Antonino Sortino**")
+        st.markdown("**© 2025 Miaoino Klaus**")
         st.markdown("Educational Tool")
     
     # =================================================================
