@@ -29,6 +29,7 @@ from report_generator_fase1 import genera_report_fase1
 from report_generator_fase2 import genera_report_fase2
 from report_generator_fase3 import genera_report_fase3
 from disclaimer import genera_disclaimer
+from pdf_generator import genera_pdf_piano_finanziario
 
 
 def setup_page():
@@ -430,6 +431,79 @@ def render_results_page(lang):
         'de': "✅ Analyse erfolgreich abgeschlossen!"
     }
     st.success(success_text[lang])
+    
+    # ========================================================================
+    # EXPORT PDF
+    # ========================================================================
+    st.markdown("---")
+    
+    export_header = {
+        'it': '📄 Esporta il Tuo Piano in PDF',
+        'en': '📄 Export Your Plan to PDF',
+        'de': '📄 Exportieren Sie Ihren Plan als PDF'
+    }
+    st.subheader(export_header[lang])
+    
+    export_description = {
+        'it': 'Scarica una versione PDF completa del tuo piano finanziario con tutti i dati e i report generati. Questo documento include le informazioni chiave e può essere salvato o stampato per riferimento futuro.',
+        'en': 'Download a complete PDF version of your financial plan with all data and generated reports. This document includes key information and can be saved or printed for future reference.',
+        'de': 'Laden Sie eine vollständige PDF-Version Ihres Finanzplans mit allen Daten und generierten Berichten herunter. Dieses Dokument enthält wichtige Informationen und kann für zukünftige Referenz gespeichert oder gedruckt werden.'
+    }
+    st.markdown(export_description[lang])
+    
+    # Genera il PDF
+    try:
+        pdf_buffer = genera_pdf_piano_finanziario(
+            dati_base=dati_base,
+            dati_demografici=dati_demografici,
+            profilo_rischio=profilo_rischio,
+            obiettivi=obiettivi,
+            report_fase1_text=report_fase1,
+            report_fase2_text=report_fase2,
+            report_fase3_text=report_fase3,
+            lang=lang
+        )
+        
+        # Nome file con data
+        from datetime import datetime
+        data_filename = datetime.now().strftime("%Y%m%d")
+        filename_map = {
+            'it': f'Piano_Finanziario_{data_filename}.pdf',
+            'en': f'Financial_Plan_{data_filename}.pdf',
+            'de': f'Finanzplan_{data_filename}.pdf'
+        }
+        
+        button_text = {
+            'it': '📥 Scarica Piano in PDF',
+            'en': '📥 Download Plan as PDF',
+            'de': '📥 Plan als PDF Herunterladen'
+        }
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.download_button(
+                label=button_text[lang],
+                data=pdf_buffer,
+                file_name=filename_map[lang],
+                mime='application/pdf',
+                type='primary',
+                use_container_width=True
+            )
+        
+        pdf_note = {
+            'it': '💡 **Nota:** Il PDF contiene un riepilogo dei tuoi dati e i report delle 3 fasi. Per ragioni di spazio, la sezione FASE 3 include solo i punti chiave dell\'allocazione. Consulta la versione online per i dettagli educativi completi.',
+            'en': '💡 **Note:** The PDF contains a summary of your data and the 3-phase reports. For space reasons, PHASE 3 includes only key allocation points. Consult the online version for complete educational details.',
+            'de': '💡 **Hinweis:** Das PDF enthält eine Zusammenfassung Ihrer Daten und die 3-Phasen-Berichte. Aus Platzgründen enthält PHASE 3 nur die wichtigsten Allokationspunkte. Konsultieren Sie die Online-Version für vollständige Bildungsdetails.'
+        }
+        st.info(pdf_note[lang])
+        
+    except Exception as e:
+        error_text = {
+            'it': f'⚠️ Errore nella generazione del PDF: {str(e)}',
+            'en': f'⚠️ Error generating PDF: {str(e)}',
+            'de': f'⚠️ Fehler beim Generieren des PDF: {str(e)}'
+        }
+        st.error(error_text[lang])
     
     # Bottone per ricominciare
     st.markdown("---")
